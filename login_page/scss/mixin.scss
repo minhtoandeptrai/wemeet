@@ -1,0 +1,15 @@
+@mixin none--style
+{
+    list-style: none;
+    text-decoration: none;
+}
+@mixin color--gradient
+{
+    background-color: rgb(93,95,238);
+    background-image: linear-gradient(to top, rgb(93,95,238) 0%, rgb(122, 109, 233) 50%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}

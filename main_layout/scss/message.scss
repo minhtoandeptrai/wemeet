@@ -1,0 +1,57 @@
+.message
+{
+    padding: 0;
+    .message_container
+    {
+        height: 100%;
+        .message_header
+        {
+            padding: 10px;
+            height: 10%;
+            border-bottom: 1px solid #eee;
+            div
+            {
+                .message_header_title
+                {
+    
+                }
+                .message_header_tool
+                {
+                    width: 7%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    ion-icon
+                    {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .message_container_main
+        {
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .write_message
+            {
+                margin-top: 20px;
+                display: inline-block;
+                padding: 10px 20px;
+                font-weight: 500;
+                color: #fff;
+                background-color: tomato;
+                border-radius: 30px;
+                &:hover
+                {
+                    cursor: pointer;
+                }
+                &:active
+                {
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+}

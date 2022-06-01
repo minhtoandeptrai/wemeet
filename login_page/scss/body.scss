@@ -1,0 +1,11 @@
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    background-color: var(--bgc);
+    font-family: 'roboto', 'sora', sans-serif;
+    position: relative;    
+    transition: all 0.3s;
+}

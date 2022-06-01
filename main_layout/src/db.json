@@ -1,0 +1,345 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "JD Chow",
+      "nickname": "@jdvow",
+      "from": "USA",
+      "following": 10,
+      "follower": 10,
+      "avatar": "../img/userlist/chow.avif",
+      "quotes": "Emptiness comes as a sunset comes of an evening, full of beauty, enchantment, and richness; it comes as naturally as the blossoming of a flower."
+    },
+    {
+      "id": 2,
+      "name": "Shawron Ween",
+      "nickname": "@showeinn",
+      "from": "VN",
+      "following": 47,
+      "follower": 10,
+      "avatar": "../img/userlist/shawon.avif",
+      "quotes": "Society is an abstraction. Abstraction is not a reality. What is reality is relationship. The relationship between human beings has created what we call society"
+    },
+    {
+      "id": 3,
+      "name": "Daniel Apodaca",
+      "nickname": "@deaotheia",
+      "from": "VNA",
+      "following": 15,
+      "follower": 10,
+      "avatar": "../img/userlist/Danielapodaca.avif",
+      "quotes": "You must understand the whole of life, not just one part of it. That is why you must read, that is why you must look at the skies, why you must sing,dance and write poems, and suffer, and understand, for all that is life"
+    },
+    {
+      "id": 4,
+      "name": "Aldo Delare",
+      "nickname": "@alsodelara",
+      "from": "ENG",
+      "following": 2,
+      "follower": 2,
+      "avatar": "../img/userlist/aldo.avif",
+      "quotes": "When I kill an Arab, a Jew, a Muslim, a Hindu, a communist, whatever it is, I am killing myself. I wonder if you realise this, basically"
+    }
+  ],
+  "userPosts": [
+    {
+      "userID": "4",
+      "postContent": "",
+      "postCmt": 0,
+      "postLike": 0,
+      "postImg": "https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/11/9/photo1636418548532-16364185487161813582285.jpg",
+      "id": 5
+    }
+  ],
+  "people": [
+    {
+      "id": "1",
+      "username": "Nhiet Ba",
+      "age": "18",
+      "farFrom": "12",
+      "selfIntroduce": "The most important thing in my life is you",
+      "passion_1": "photo",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/dichlenhietba/1.jpg",
+        "../img/matching/dichlenhietba/2.jpg",
+        "../img/matching/dichlenhietba/3.jpg",
+        "../img/matching/dichlenhietba/4.jpg",
+        "../img/matching/dichlenhietba/5.jpg"
+      ]
+    },
+    {
+      "id": "2",
+      "username": "Duong Mich",
+      "age": "28",
+      "farFrom": "40",
+      "selfIntroduce": "You are my sun shine",
+      "passion_1": "photo",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/duongmich/1.jpg",
+        "../img/matching/duongmich/2.jpg",
+        "../img/matching/duongmich/3.jpg",
+        "../img/matching/duongmich/4.jpg",
+        "../img/matching/duongmich/5.jpg"
+      ]
+    },
+    {
+      "id": "3",
+      "username": "Ji-eun",
+      "age": "20",
+      "farFrom": "50",
+      "selfIntroduce": "To live is to fight",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/iu/1.jpg",
+        "../img/matching/iu/2.jpg",
+        "../img/matching/iu/3.jpg",
+        "../img/matching/iu/4.jpg",
+        "../img/matching/iu/5.jpg"
+      ]
+    },
+    {
+      "id": "4",
+      "username": "Tea-hye",
+      "age": "40",
+      "farFrom": "100",
+      "selfIntroduce": "The healthy equals beautiful",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/kimteahye/1.jpg",
+        "../img/matching/kimteahye/2.jpg",
+        "../img/matching/kimteahye/3.jpg",
+        "../img/matching/kimteahye/4.jpg",
+        "../img/matching/kimteahye/5.jpg"
+      ]
+    },
+    {
+      "id": "5",
+      "username": "Lisa",
+      "age": "20",
+      "farFrom": "50",
+      "selfIntroduce": "A man falls in love through his eyes, a woman through her ears",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/lisa/1.jpg",
+        "../img/matching/lisa/2.jpg",
+        "../img/matching/lisa/3.jpg",
+        "../img/matching/lisa/4.jpg",
+        "../img/matching/lisa/5.jpg"
+      ]
+    },
+    {
+      "id": "6",
+      "username": "Ogze Yagiz",
+      "age": "20",
+      "farFrom": "50",
+      "selfIntroduce": "Never frown, even when you are sad, because you never know who is falling in love with your smile",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/ogza/1.jpg",
+        "../img/matching/ogza/2.jpg",
+        "../img/matching/ogza/3.jpg",
+        "../img/matching/ogza/4.jpg",
+        "../img/matching/ogza/5.jpg"
+      ]
+    },
+    {
+      "id": "7",
+      "username": "Trieu Le Dinh",
+      "age": "30",
+      "farFrom": "50",
+      "selfIntroduce": "Dont waste your time on a man/woman, who isnt willing to waste their time on you",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/trieuledinh/1.jpg",
+        "../img/matching/trieuledinh/2.jpg",
+        "../img/matching/trieuledinh/3.jpg",
+        "../img/matching/trieuledinh/4.jpg",
+        "../img/matching/trieuledinh/5.jpg"
+      ]
+    },
+    {
+      "id": "8",
+      "username": "Trieu Lo Tu",
+      "age": "30",
+      "farFrom": "50",
+      "selfIntroduce": "You know when you love someone when you want them to be happy even if their happiness means that youre not part of it",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/trieulotu/1.jpg",
+        "../img/matching/trieulotu/2.jpg",
+        "../img/matching/trieulotu/3.jpg",
+        "../img/matching/trieulotu/4.jpg",
+        "../img/matching/trieulotu/5.jpg"
+      ]
+    },
+    {
+      "id": "9",
+      "username": "Truong Tu Lam",
+      "age": "31",
+      "farFrom": "50",
+      "selfIntroduce": "You can accomplish by kindness what you cannot by force",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/truongtulam/1.jpg",
+        "../img/matching/truongtulam/2.jpg",
+        "../img/matching/truongtulam/3.jpg",
+        "../img/matching/truongtulam/4.jpg",
+        "../img/matching/truongtulam/5.jpg"
+      ]
+    },
+    {
+      "id": "10",
+      "username": "Ribi Sachi",
+      "age": "31",
+      "farFrom": "50",
+      "selfIntroduce": "You can accomplish by kindness what you cannot by forceThere is no happiness in having or in getting, but only in giving",
+      "passion_1": "food",
+      "passion_2": "music",
+      "img": [
+        "../img/matching/ribi/1.jpg",
+        "../img/matching/ribi/2.jpg",
+        "../img/matching/ribi/3.jpg",
+        "../img/matching/ribi/4.jpg",
+        "../img/matching/ribi/5.jpg"
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "name": "Brooker Angle",
+      "age": "19",
+      "time": "19 hours",
+      "description": "Comming on with me!",
+      "img": "../img/posts/1.avif",
+      "likes": null
+    },
+    {
+      "id": 2,
+      "name": "Tamara Belli",
+      "age": "20",
+      "time": "19 hours",
+      "description": "Comming on with me!Never say all you know. And never believe all you hear",
+      "img": "../img/posts/2.avif"
+    },
+    {
+      "id": 3,
+      "name": "Yiran Yings",
+      "age": "25",
+      "time": "19 hours",
+      "description": "An intelligent person is like a river,the deeper the less noise!",
+      "img": "../img/posts/3.avif"
+    },
+    {
+      "id": 5,
+      "name": "Julia Ceasar",
+      "age": "23",
+      "time": "19 hours",
+      "description": "I believe there should be a better way to start each day… instead of waking up every morning!",
+      "img": "../img/posts/4.avif"
+    },
+    {
+      "id": 6,
+      "name": "Jafari Nall",
+      "age": "22",
+      "time": "19 hours",
+      "description": "If you want to make your dreams come true, the first thing you have to do is wake up!",
+      "img": "../img/posts/5.avif"
+    },
+    {
+      "id": 7,
+      "name": "Jon Ly",
+      "age": "18",
+      "time": "19 hours",
+      "description": "Sometimes what you want isn`t what you get, but what you get in the end is so much better than what you wanted!",
+      "img": "../img/posts/6.avif"
+    }
+  ],
+  "well_know": [
+    {
+      "name": "Elon Musk",
+      "nickname": "@theeelonmusk",
+      "avatar": "../img/follow/musk.jpg"
+    },
+    {
+      "name": "Bill Gates",
+      "nickname": "@theeebill",
+      "avatar": "../img/follow/billgate.jpg"
+    },
+    {
+      "name": "Justin Bieber",
+      "nickname": "@bieber1101",
+      "avatar": "../img/follow/justin.jpg"
+    },
+    {
+      "name": "Emma waston",
+      "nickname": "@wasemton",
+      "avatar": "../img/follow/emma.jpg"
+    },
+    {
+      "name": "Mark Zuckerberg",
+      "nickname": "@duckerberd",
+      "avatar": "../img/follow/markz.jpg"
+    },
+    {
+      "name": "Donald Trump",
+      "nickname": "@trumpisthebest",
+      "avatar": "../img/follow/musk.jpg"
+    },
+    {
+      "name": "Daniel Potter",
+      "nickname": "@harrylu",
+      "avatar": "../img/follow/daniel.jpg"
+    },
+    {
+      "name": "Ronal Weshley",
+      "nickname": "@wishyourboy",
+      "avatar": "../img/follow/ronald.jpg"
+    },
+    {
+      "name": "Ed Sheeran",
+      "nickname": "@theeead",
+      "avatar": "../img/follow/edsheeran.jpg"
+    },
+    {
+      "name": "jeff Bezos",
+      "nickname": "@mastercheff",
+      "avatar": "../img/follow/jeff.jpg"
+    },
+    {
+      "name": "Taylor Swiff",
+      "nickname": "@killeronline",
+      "avatar": "../img/follow/taylor.jpg"
+    },
+    {
+      "name": "Mariah Carey",
+      "nickname": "@mariaozawa",
+      "avatar": "../img/follow/mariah.jpg"
+    }
+  ],
+  "commentList": [
+    {
+      "id": 1,
+      "postID": 1,
+      "author": "Johny Dang",
+      "content": "you are so nice !!!",
+      "avatar": "https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/11/9/photo1636418548532-16364185487161813582285.jpg"
+    },
+    {
+      "postID": "1",
+      "author": "Aldo Delare",
+      "content": "hello",
+      "avatar": "../img/userlist/aldo.avif",
+      "id": 2
+    }
+  ]
+}

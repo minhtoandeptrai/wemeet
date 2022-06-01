@@ -1,0 +1,106 @@
+@mixin color--gradient
+{
+    background-color: #717171;
+    background-image: linear-gradient(to top, rgb(255,111,88) 0%, rgb(253,53,117) 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+@mixin none--style
+{
+    list-style: none;
+    text-decoration: none;
+}
+@mixin scrollbar__custom
+{
+    .manage__account::-webkit-scrollbar 
+    {
+        width: 10px;             
+    }
+    .manage__account::-webkit-scrollbar-track 
+    {
+    background: #eee;       
+  
+    }
+    .manage__account::-webkit-scrollbar-thumb 
+    {
+        background-color: rgba(128,128,129,0.5);
+        border-radius: 10px;
+    }
+   
+}
+@mixin scrollbar__custom_blog
+{
+    .blog_wrapper::-webkit-scrollbar 
+    {
+        width: 10px;    
+
+    }
+    .blog_wrapper::-webkit-scrollbar-track 
+    {
+        background: #eee;       
+        background-color: transparent;
+    }
+    .blog_wrapper::-webkit-scrollbar-thumb 
+    {
+        background-color: rgba(128,128,129,0.5);
+        background-color: transparent;
+        border-radius: 10px;
+    }
+}
+@mixin scrollbar__custom_profile
+{
+    .profile_container::-webkit-scrollbar 
+    {
+        width: 10px;    
+    }
+    .profile_container::-webkit-scrollbar-track 
+    {
+        background: #eee;       
+        background-color: transparent;
+    }
+    .profile_container::-webkit-scrollbar-thumb 
+    {
+        background-color: rgba(128,128,129,0.5);
+        background-color: transparent;
+        border-radius: 10px;
+    }
+}
+@mixin scrollbar__custom_home_posting
+{
+    .home_container::-webkit-scrollbar 
+    {
+        width: 10px;    
+    }
+    .home_container::-webkit-scrollbar-track 
+    {
+        background: #eee;       
+        background-color: transparent;
+    }
+    .home_container::-webkit-scrollbar-thumb 
+    {
+        background-color: rgba(128,128,129,0.5);
+        background-color: transparent;
+        border-radius: 10px;
+    }
+}
+@mixin scrollbar__custom_follow
+{
+    .whotofollow_container::-webkit-scrollbar 
+    {
+        width: 10px;    
+    }
+    .whotofollow_container::-webkit-scrollbar-track 
+    {
+        background: #eee;       
+        background-color: transparent;
+    }
+    .whotofollow_container::-webkit-scrollbar-thumb 
+    {
+        background-color: rgba(128,128,129,0.5);
+        background-color: transparent;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,12 @@
+.addlikes
+{
+    display: block;
+    position: absolute;
+    z-index: 9999999999;
+    transition: all 1s;
+    .heart
+    {
+        font-size: 30px;
+        color: red;
+    }
+}

@@ -1,0 +1,102 @@
+.header
+{
+    width: 100%;
+    top: 0; 
+    background-color: var(--bgc);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    &__container
+    {
+        width: 100%;
+        .nav
+        {
+            #logo
+            {
+                font-family: sans-serif;
+                font-style: italic;
+                font-weight: 600;
+                @include color--gradient;
+                font-size: 30px;
+            }
+            ul span
+            {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2.5px;
+                background-color: var(--medium-blue);
+                border-radius: 10px;
+                transition: all 0.3s;
+
+            }
+            li
+            {
+                font-size: inherit;
+                font-family: 'sora';
+                position: relative;
+                padding: 10px 0;
+                cursor: pointer;
+                transition: all 0.3s;
+                color: var(--hard-blue);
+                opacity: 0.8;
+                &:not(:last-child)
+                {
+                    margin-right: 50px;
+                }
+                &:hover > span
+                {
+                    width: 100%;
+                }
+                &:hover
+                {
+                    color: var(--hover-color);
+                  
+                }
+                &:active
+                {
+                    transform: scale(0.95);
+                }
+            }
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--font-sizeS);
+            &__main
+            {
+                display: flex;
+                width: 62%;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &__options
+            {
+                @include none--style;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &__tool
+            {
+                @include none--style;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                #login
+                {
+                    background-color: var(--medium-blue);
+                    padding: 10px 40px;
+                    border-radius: 10px; 
+                    transition: all 0.2s;
+                    color: #eee;
+                    &:hover
+                    {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,549 @@
+.profile
+{
+    position: relative;
+    padding: 0;
+    @include scrollbar__custom_profile;
+    &:hover 
+    {
+        .whotofolloprofile_containerw_container::-webkit-scrollbar-track 
+        {
+            background: #eee;       
+            
+        }
+        .profile_container::-webkit-scrollbar-thumb 
+        {
+            background-color: rgba(128,128,129,0.5);
+            border-radius: 10px;
+        }
+    }
+    .profile_container
+    {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 0 20px;
+        .profile_header
+        {
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            &_background
+            {
+                height: 200px;
+                background-color: grey;
+            }
+            &_main
+            {
+                color: grey;
+                font-family: sans-serif;
+                min-height: 350px;
+                margin-top: -100px;
+                .profile_item
+                {
+                    margin-bottom: 10px;
+                }
+                .profile_header_avatar
+                {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 10px;
+                    align-items: center;
+                    .avatar
+                    {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 100%;
+                        box-sizing: content-box;
+                        img
+                        {
+                            border-radius: 100%;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            padding: 5px;
+                            background-color: #000;
+                        }
+                    }
+                        .setup_profile
+                        {
+                            padding: 10px 20px;
+                            border-radius: 30px;
+                            color: #fff;
+                            background-color: rgb(255, 75, 86);
+                            transform: translateY(100%);
+                            &:hover
+                            {
+                                cursor: pointer;
+                            }
+                        }
+                }
+                .profile_information
+                {
+                    width: 100%;
+                    .profile_name
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        span
+                        {
+                            &:first-child
+                            {
+                                color: #000;
+                                font-weight: 600;
+                                font-size: 24px;
+                                font-family: sans-serif, "sora";
+                            }
+                        }
+                    }
+                    .profile_status
+                    {
+                        display: flex;
+                        .profile_follow
+                        {
+                            margin-right: 10px;
+                            font-weight: 450;
+                            .profile_follow_quantity
+                            {
+                                color: #000;
+                            }
+                        }
+                    }
+                    .profile_aboutme
+                    {
+                        padding: 10px 0;
+                        span
+                        {
+                            font-family: auto;  
+                            font-size: 18px;    
+                            font-style: italic;
+                        }   
+                    }
+                }
+            }
+        }
+        .profile_main
+        {
+            height: 100%;
+            #posts_new
+            {
+                width: 100px;
+                height: 50px;
+                li
+                {
+                    width: 100%;
+                    text-align: center;
+                    list-style: none;
+                    padding: 5px 0;
+                    font-weight: 500;
+                    border-bottom: 2px solid lightcoral;
+                }
+            }
+            .post_wrapper
+            {
+                padding: 10px;
+                height: inherit;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                
+            }
+            .post_item
+            {
+                width: 100%;
+                display: flex;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #eee;
+                &_avatar
+                {
+                    display: block;
+                    border-radius: 100%;
+                    width: 10%;
+                    span
+                    {
+                        display: block;
+                        width: 50px;
+                        height: 50px;
+                        img
+                        {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+                &_main
+                {
+                    width: 80%;
+                    max-height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .post_item_infor
+                    {
+                        width: 100%;
+                        margin-bottom: 10px;
+                        padding: 2px 0;
+                        &_name
+                        {
+                            font-weight: 500;
+                            .age
+                            {
+                                display: inline-block;
+                                padding: 2px 5px;
+                                font-size: 12px;
+                                border-radius: 40%;
+                                background-color: rgba(255, 0, 0, 0.147);
+                            }
+                        }
+                        .post_time
+                        {
+                            margin-top: -5px;
+                            color: var(--hover-color);
+                            font-size: 13.5px;
+                            span
+                            {
+                                font-family: none;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .post_item_content
+                    {
+                        width: 100%;
+                        .post_caption
+                        {
+                            span
+                            {
+                                font-size: 16px;
+                            }
+                        }
+                        .post_img
+                        {
+                            align-items: center;
+                            justify-content: center;
+                            padding: 5px 0;
+                            img
+                            {
+                                width: 100%;
+                                height: 350px;
+                                border-radius: 10px;
+                                object-fit: cover;
+                            }                
+                        }
+                    }
+                    .post_contact
+                    {
+                        display: flex;
+                        justify-content: flex-end;
+                        &_status
+                        {
+                            padding: 10px;
+                            cursor: pointer;
+                            &:active
+                            {
+                                transform: scale(0.95);
+                            }
+                        }
+                    }
+                    .comment_to_post
+                    {
+                        height: 40px;
+                        width: 100%;
+                        transition: all 0.2s;
+                        display: none;
+                        &_wrapper
+                        {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+                            .your_avatar
+                            {
+                                width: 36px;
+                                height: 36px;
+                                img
+                                {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 100%;
+                                }
+                            }
+                            .text_to
+                            {
+                                width: calc(100% - 45px);
+                                display: flex;
+                                height: 100%;
+                                align-items: center;
+                                justify-content: center;
+                                position: relative;
+                                input
+                                {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 20px;
+                                    padding: 0 12px;
+                                    outline: none;
+                                    border: none;
+                                    background-color: rgb(240,242,245);
+                                    font-size: 15px;
+                                    color: #333;
+                                }
+                                .fa-paper-plane
+                                {
+                                    position: absolute;
+                                    right: 0;
+                                    top: 50%;
+                                    transform: translate(-100%,-50%);
+                                    color: #333;
+                                    &:hover
+                                    {
+                                        cursor: pointer;
+                                        color: rgb(110, 103, 103);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .comment_container
+                {
+                    display: block;
+                    width: 100%;
+                    margin-top: 10px;
+                    .comment_list
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        height: inherit;
+                        width: inherit;
+                        .comment_item
+                        {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            margin-top: 12px;
+                            transition: all 0.5s;
+                            .avatar
+                            {
+                                width: 8%;
+                                img
+                                {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 100%;
+                                }
+                            }
+                            .comment_content
+                            {
+                                display: flex;
+                                flex-direction: column;
+                                width: 89%;
+                                .comment_user
+                                {
+                                    width: 100%;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    .comment_user
+                                    {
+                                        width: 100%;
+                                    }
+                                    .main_content
+                                    {
+                                        width: 70%;
+                                        word-wrap: break-word;
+                                        font-weight: 400;
+                                        font-size: 13.5px;
+                                        color:rgb(110, 103, 103);
+                                    }
+                                }
+                                ul
+                                {
+                                    display: flex;
+                                    @include none--style;
+                                    li
+                                    {
+                                        font-size: 12px;
+                                        margin-right: 15px;
+                                        font-weight: 400;
+                                        color: grey;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                            .comment_heart
+                            {
+                                width: 2%;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .edit_profile
+    {
+        position: fixed;
+        display: none;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 0.2s all;
+        background-color: rgba(0,0,0,0.2);
+        .edit_profile_container
+        {
+            position: absolute;
+            border-radius: 10px;
+            padding:10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width:57%;
+            background-color: #fff;
+            height: 70vh;
+            box-shadow: rgba(255, 75, 86,0.1) 0px 2px 8px 0px;
+            .edit_image
+            {
+                height: 30%;
+                .edit_image_container
+                {
+                    height: 100%;
+                    display: flex;
+                    justify-content:center;
+                    .edit_avatar
+                    {
+                        height: 150px;
+                        width: 150px;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img
+                        {
+                            height: 100%;
+                            width: 100%;
+                            background-color: #eee;
+                            padding: 5px;
+                            border-radius: 100%;
+                            object-fit: cover;
+                        }
+                        .pen_edit
+                        {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+            .edit_main
+            {
+                width: 95%;
+                margin: 0 auto;
+                .edit_main_header
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 2px solid #eee;
+                    padding: 10px 0;
+                    .title
+                    {
+                        h3
+                        {
+                            font-weight: 500;
+                        }
+                    }
+                    .edit_options
+                    {
+                        display: flex;
+                        .edit_option
+                        {
+                            min-width: 90px;
+                            padding: 5px;
+                            border: 1px solid #ccc;
+                            display: flex;
+                            justify-content:center;
+                            align-items:center;
+                            border-radius: 5px;
+                            span
+                            {
+                                text-align: center;
+                            }
+                            &:hover
+                            {
+                                cursor: pointer;
+                            }
+                            &:active
+                            {
+                                transform: scale(0.95);
+                            }
+                        }
+                        .cancel_option
+                        {
+                            margin-right: 10px;
+                            border-color: rgb(255, 75, 86);
+                            color: grey;
+                            font-weight: 500;
+                        }
+                        .save_option
+                        {
+                            background-color:rgb(255, 75, 86);
+                            color: #fff;
+                        }
+                    }
+                }
+                .edit_name_main
+                {
+                    margin-top: 5px;
+                    .edit_main_container
+                    {
+                        label
+                        {
+                            font-size:  15px;
+                            padding: 10px;
+                            text-transform: uppercase;
+                            font-weight: 500;
+                            color: grey;
+                        }
+                        input, textarea
+                        {
+                            border: 1px solid #eee;
+                            outline: none;
+                            font-size: 16px;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            background-color: rgba(255, 75, 87, 0.007);
+                            &:focus
+                            {
+                                border-color:rgb(255, 75, 86);
+                                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                            }
+                        }
+                        .edit_element
+                        {
+                            display: flex;
+                            width: 40%;
+                            flex-direction: column;
+                            margin-bottom: 10px;
+                        }
+                        .about_me
+                        {   
+                            width: 100%;
+                            textarea
+                            {   
+                                width: 100%;
+                                resize: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

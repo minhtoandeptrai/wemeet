@@ -1,0 +1,106 @@
+.form_wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+    transition: all 0.6s;
+    .login_form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 550px;
+        width: 400px;
+        background-color: #fff;
+        border-radius: 5px;
+        .login_form_container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: space-around;
+            .form_close {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                transition: all 0.1s linear;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // transform: translate(-50%, 50%);
+                i {
+                    font-size: 22px;
+                    color: var(--hover-color);
+                }
+                &:hover {
+                    transform: rotate(360deg);
+                    color: #000;
+                    cursor: pointer;
+                }
+            }
+            .form_welcome {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h1 {
+                    @include color--gradient;
+                }
+            }
+            .form_main {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                // justify-content: space-between;
+                align-items: center;
+                .login__item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    border: 1px solid #eee;
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin: 5px 0;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: var(--hover-color);
+                        color: #eee;
+                    }
+                    &:active {
+                        transform: scale(0.99)
+                    }
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .or_login_with {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                .or_login_with_wrap {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: space-between;
+                    i {
+                        color: var(--medium-blue);
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.appear.form_wrapper {
+    display: block;
+}
