@@ -73,7 +73,7 @@ setTimeout(() => {
                                 </div>
                                 </div>
                                 <div class="aboutyou">
-                                <p>${user.selfIntroduce}</p>
+                                <p>"${user.selfIntroduce}"</p>
                                 </div>
                                 <div class="passion">
                                 <span>Passions</span>

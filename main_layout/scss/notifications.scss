@@ -1,54 +1,43 @@
-.notifications
-{
+.notifications {
     padding: 0;
-    .notifications_container
-    {
+    .notifications_container {
         width: 100%;
-        .notifications_header
-        {
+        .notifications_header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            ion-icon 
-            {
-                font-size: 20px;
-                &:hover
-                {
+            padding: 0 2rem;
+            ion-icon {
+                font-size: 2rem;
+                &:hover {
                     transition: all 0.1s;
                     transform: rotate(180deg);
                 }
             }
         }
-        .notifications_options
-        {
+        .notifications_options {
             width: 100%;
-            .notifications_options_selection
-            {
+            .notifications_options_selection {
                 display: flex;
-                .notifications_options_child
-                {
+                .notifications_options_child {
                     position: relative;
                     display: block;
                     width: 50%;
-                    font-size: 16px;
+                    font-size: 1.6rem;
                     text-align: center;
-                    padding: 15px 0;
+                    padding: 1.5rem 0;
                     border-bottom: 1px solid #eee;
                     transition: all 0.2s;
-                    &:hover
-                    {
+                    &:hover {
                         cursor: pointer;
                         background-color: rgba(121, 112, 108, 0.11);
                     }
-                    span
-                    {
-                        .notifications_line
-                        {
+                    span {
+                        .notifications_line {
                             position: absolute;
-                            border-radius: 50px;
-                            height: 4px;
+                            border-radius: 5rem;
+                            height: 0.4rem;
                             width: 10%;
                             padding: 0;
                             background-color: rgb(255, 75, 86);
@@ -60,43 +49,37 @@
                 }
             }
         }
-        .notifications_wrapper
-        {
+        .notifications_wrapper {
             width: 100%;
-            .notifications_wrapper_child
-            {
+            .notifications_wrapper_child {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                .notifications_item
-                {
+                .notifications_item {
                     width: 100%;
-                    padding: 15px 20px;
+                    padding: 1.5rem 2rem;
                     display: flex;
                     align-items: flex-start;
                     border-bottom: 1px solid #eee;
-                    &:hover
-                    {
+                    &:hover {
                         cursor: pointer;
                         background-color: rgba(209, 179, 167, 0.11);
                     }
-                    .notifications_item_icon
-                    {
+                    .notifications_item_icon {
                         color: rgb(255, 75, 86);
                         font-size: 20px;
                         width: 5%;
                     }
-                    span
-                    {
+                    span {
+                        font-size: 1.5rem;
                         font-weight: 500;
                         color: grey;
                     }
-                    &:active
-                    {
+                    &:active {
                         transform: scale(0.995);
                     }
                 }
             }
         }
-    }  
+    }
 }

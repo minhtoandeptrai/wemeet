@@ -1,172 +1,153 @@
-.profile
-{
+.profile {
     position: relative;
     padding: 0;
     @include scrollbar__custom_profile;
-    &:hover 
-    {
-        .whotofolloprofile_containerw_container::-webkit-scrollbar-track 
-        {
-            background: #eee;       
-            
+    &:hover {
+        .whotofolloprofile_containerw_container::-webkit-scrollbar-track {
+            background: #eee;
         }
-        .profile_container::-webkit-scrollbar-thumb 
-        {
-            background-color: rgba(128,128,129,0.5);
-            border-radius: 10px;
+        .profile_container::-webkit-scrollbar-thumb {
+            background-color: rgba(128, 128, 129, 0.5);
+            border-radius: 1rem;
         }
     }
-    .profile_container
-    {
+    .profile_container {
         width: 100%;
         height: 100%;
         overflow-y: scroll;
-        padding: 0 20px;
-        .profile_header
-        {
-            min-height: 400px;
+        padding: 0 2rem;
+        .profile_header {
+            min-height: 40rem;
             display: flex;
             flex-direction: column;
-            &_background
-            {
-                height: 200px;
+            &_background {
+                height: 20rem;
                 background-color: grey;
             }
-            &_main
-            {
+            &_main {
                 color: grey;
                 font-family: sans-serif;
-                min-height: 350px;
-                margin-top: -100px;
-                .profile_item
-                {
-                    margin-bottom: 10px;
+                min-height: 35rem;
+                margin-top: -10rem;
+                .profile_item {
+                    margin-bottom: 1rem;
                 }
-                .profile_header_avatar
-                {
+                .profile_header_avatar {
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
-                    padding: 0 10px;
+                    padding: 0 1rem;
                     align-items: center;
-                    .avatar
-                    {
-                        width: 200px;
-                        height: 200px;
+                    .avatar {
+                        width: 20rem;
+                        height: 20rem;
                         border-radius: 100%;
                         box-sizing: content-box;
-                        img
-                        {
+                        img {
                             border-radius: 100%;
                             height: 100%;
                             width: 100%;
                             object-fit: cover;
-                            padding: 5px;
+                            padding: 0.5rem;
                             background-color: #000;
                         }
                     }
-                        .setup_profile
-                        {
-                            padding: 10px 20px;
-                            border-radius: 30px;
-                            color: #fff;
-                            background-color: rgb(255, 75, 86);
-                            transform: translateY(100%);
-                            &:hover
-                            {
-                                cursor: pointer;
-                            }
+                    .setup_profile {
+                        font-size: 1.5rem;
+                        padding: 1rem 2rem;
+                        border-radius: 3rem;
+                        color: #fff;
+                        background-color: rgb(255, 75, 86);
+                        transform: translateY(100%);
+                        &:hover {
+                            cursor: pointer;
                         }
+                    }
                 }
-                .profile_information
-                {
+                .profile_information {
                     width: 100%;
-                    .profile_name
-                    {
+                    .profile_name {
                         display: flex;
                         flex-direction: column;
-                        span
-                        {
-                            &:first-child
-                            {
+                        span {
+                            &:first-child {
                                 color: #000;
                                 font-weight: 600;
-                                font-size: 24px;
+                                font-size: 2.4rem;
                                 font-family: sans-serif, "sora";
                             }
                         }
                     }
-                    .profile_status
-                    {
+                    #nickname {
+                        font-size: 1.7rem;
+                    }
+                    .profile_status {
                         display: flex;
-                        .profile_follow
-                        {
-                            margin-right: 10px;
+                        span {
+                            font-size: 1.5rem;
+                        }
+                        .profile_follow {
+                            margin-right: 1rem;
                             font-weight: 450;
-                            .profile_follow_quantity
-                            {
+                            .profile_follow_quantity {
                                 color: #000;
                             }
                         }
                     }
-                    .profile_aboutme
-                    {
-                        padding: 10px 0;
-                        span
-                        {
-                            font-family: auto;  
-                            font-size: 18px;    
+                    .profile_join {
+                        span,
+                        i {
+                            font-size: 1.5rem;
+                        }
+                    }
+                    .profile_aboutme {
+                        padding: 1rem 0;
+                        span {
+                            font-family: auto;
+                            font-size: 1.8rem;
                             font-style: italic;
-                        }   
+                        }
                     }
                 }
             }
         }
-        .profile_main
-        {
+        .profile_main {
             height: 100%;
-            #posts_new
-            {
-                width: 100px;
-                height: 50px;
-                li
-                {
+            #posts_new {
+                width: 10rem;
+                height: 5rem;
+                li {
                     width: 100%;
+                    font-size: 1.5rem;
                     text-align: center;
                     list-style: none;
-                    padding: 5px 0;
+                    padding: 0.5rem 0;
                     font-weight: 500;
                     border-bottom: 2px solid lightcoral;
                 }
             }
-            .post_wrapper
-            {
-                padding: 10px;
+            .post_wrapper {
+                padding: 1rem;
                 height: inherit;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                
             }
-            .post_item
-            {
+            .post_item {
                 width: 100%;
                 display: flex;
-                padding: 10px;
-                margin-bottom: 10px;
+                padding: 1rem;
+                margin-bottom: 1rem;
                 border-bottom: 1px solid #eee;
-                &_avatar
-                {
+                &_avatar {
                     display: block;
                     border-radius: 100%;
                     width: 10%;
-                    span
-                    {
+                    span {
                         display: block;
-                        width: 50px;
-                        height: 50px;
-                        img
-                        {
+                        width: 5rem;
+                        height: 5rem;
+                        img {
                             display: block;
                             width: 100%;
                             height: 100%;
@@ -174,132 +155,110 @@
                         }
                     }
                 }
-                &_main
-                {
+                &_main {
                     width: 80%;
                     max-height: 100%;
                     display: flex;
                     flex-direction: column;
-                    .post_item_infor
-                    {
+                    .post_item_infor {
                         width: 100%;
                         margin-bottom: 10px;
-                        padding: 2px 0;
-                        &_name
-                        {
+                        padding: 0.2rem 0;
+                        &_name {
                             font-weight: 500;
-                            .age
-                            {
+                            .age {
                                 display: inline-block;
-                                padding: 2px 5px;
-                                font-size: 12px;
+                                padding: 0.2rem 0.5rem;
+                                font-size: 1.2rem;
                                 border-radius: 40%;
                                 background-color: rgba(255, 0, 0, 0.147);
                             }
                         }
-                        .post_time
-                        {
+                        .post_time {
                             margin-top: -5px;
                             color: var(--hover-color);
-                            font-size: 13.5px;
-                            span
-                            {
+                            font-size: 1.35rem;
+                            span {
                                 font-family: none;
                                 font-weight: 600;
                             }
                         }
                     }
-                    .post_item_content
-                    {
+                    .post_item_content {
                         width: 100%;
-                        .post_caption
-                        {
-                            span
-                            {
-                                font-size: 16px;
+                        .post_caption {
+                            span {
+                                font-size: 1.6rem;
                             }
                         }
-                        .post_img
-                        {
+                        .post_img {
                             align-items: center;
                             justify-content: center;
-                            padding: 5px 0;
-                            img
-                            {
+                            padding: 0.5rem 0;
+                            img {
                                 width: 100%;
-                                height: 350px;
-                                border-radius: 10px;
+                                height: 35rem;
+                                border-radius: 1rem;
                                 object-fit: cover;
-                            }                
+                            }
                         }
                     }
-                    .post_contact
-                    {
+                    .post_contact {
                         display: flex;
                         justify-content: flex-end;
-                        &_status
-                        {
-                            padding: 10px;
+                        &_status {
+                            padding: 1rem;
                             cursor: pointer;
-                            &:active
-                            {
+                            &:active {
                                 transform: scale(0.95);
                             }
                         }
                     }
-                    .comment_to_post
-                    {
-                        height: 40px;
+                    .comment_to_post {
+                        height: 4rem;
                         width: 100%;
                         transition: all 0.2s;
                         display: none;
-                        &_wrapper
-                        {
+                        &_wrapper {
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
                             width: 100%;
                             height: 100%;
-                            .your_avatar
-                            {
-                                width: 36px;
-                                height: 36px;
-                                img
-                                {
+                            .your_avatar {
+                                width: 3.6rem;
+                                height: 3.6rem;
+                                img {
                                     width: 100%;
                                     height: 100%;
                                     border-radius: 100%;
                                 }
                             }
-                            .text_to
-                            {
-                                width: calc(100% - 45px);
+                            .text_to {
+                                width: calc(100% - 4.5rem);
                                 display: flex;
                                 height: 100%;
                                 align-items: center;
                                 justify-content: center;
                                 position: relative;
-                                input
-                                {
+                                input {
                                     width: 100%;
                                     height: 100%;
-                                    border-radius: 20px;
-                                    padding: 0 12px;
+                                    border-radius: 2rem;
+                                    padding: 0 1.2rem;
                                     outline: none;
                                     border: none;
-                                    background-color: rgb(240,242,245);
-                                    font-size: 15px;
+                                    background-color: rgb(240, 242, 245);
+                                    font-size: 1rem;
                                     color: #333;
                                 }
-                                .fa-paper-plane
-                                {
+                                .fa-paper-plane {
                                     position: absolute;
                                     right: 0;
                                     top: 50%;
-                                    transform: translate(-100%,-50%);
+                                    transform: translate(-100%, -50%);
                                     color: #333;
-                                    &:hover
-                                    {
+                                    &:hover {
                                         cursor: pointer;
                                         color: rgb(110, 103, 103);
                                     }
@@ -308,73 +267,61 @@
                         }
                     }
                 }
-                .comment_container
-                {
+                .comment_container {
                     display: block;
                     width: 100%;
-                    margin-top: 10px;
-                    .comment_list
-                    {
+                    margin-top: 1rem;
+                    .comment_list {
                         display: flex;
                         flex-direction: column;
                         height: inherit;
                         width: inherit;
-                        .comment_item
-                        {
+                        .comment_item {
                             display: flex;
                             justify-content: space-between;
                             align-items: flex-start;
-                            margin-top: 12px;
+                            margin-top: 1.2rem;
                             transition: all 0.5s;
-                            .avatar
-                            {
+                            .avatar {
                                 width: 8%;
-                                img
-                                {
-                                    width: 40px;
-                                    height: 40px;
+                                img {
+                                    width: 4rem;
+                                    height: 4rem;
                                     border-radius: 100%;
                                 }
                             }
-                            .comment_content
-                            {
+                            .comment_content {
                                 display: flex;
                                 flex-direction: column;
                                 width: 89%;
-                                .comment_user
-                                {
+                                .comment_user {
                                     width: 100%;
-                                    font-size: 14px;
+                                    font-size: 1.4rem;
                                     font-weight: 500;
-                                    .comment_user
-                                    {
+                                    .comment_user {
                                         width: 100%;
                                     }
-                                    .main_content
-                                    {
+                                    .main_content {
                                         width: 70%;
                                         word-wrap: break-word;
                                         font-weight: 400;
-                                        font-size: 13.5px;
-                                        color:rgb(110, 103, 103);
+                                        font-size: 1.35rem;
+                                        color: rgb(110, 103, 103);
                                     }
                                 }
-                                ul
-                                {
+                                ul {
                                     display: flex;
                                     @include none--style;
-                                    li
-                                    {
-                                        font-size: 12px;
-                                        margin-right: 15px;
+                                    li {
+                                        font-size: 1.2rem;
+                                        margin-right: 1.5rem;
                                         font-weight: 400;
                                         color: grey;
                                         cursor: pointer;
                                     }
                                 }
                             }
-                            .comment_heart
-                            {
+                            .comment_heart {
                                 width: 2%;
                                 cursor: pointer;
                             }
@@ -384,8 +331,7 @@
             }
         }
     }
-    .edit_profile
-    {
+    .edit_profile {
         position: fixed;
         display: none;
         z-index: 1000;
@@ -394,46 +340,40 @@
         right: 0;
         bottom: 0;
         transition: 0.2s all;
-        background-color: rgba(0,0,0,0.2);
-        .edit_profile_container
-        {
+        background-color: rgba(0, 0, 0, 0.2);
+        .edit_profile_container {
             position: absolute;
-            border-radius: 10px;
-            padding:10px;
+            border-radius: 1rem;
+            padding: 1rem;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
-            width:57%;
+            transform: translate(-50%, -50%);
+            width: 57%;
             background-color: #fff;
             height: 70vh;
-            box-shadow: rgba(255, 75, 86,0.1) 0px 2px 8px 0px;
-            .edit_image
-            {
+            box-shadow: rgba(255, 75, 86, 0.1) 0px 2px 8px 0px;
+            .edit_image {
                 height: 30%;
-                .edit_image_container
-                {
+                .edit_image_container {
                     height: 100%;
                     display: flex;
-                    justify-content:center;
-                    .edit_avatar
-                    {
-                        height: 150px;
-                        width: 150px;
+                    justify-content: center;
+                    .edit_avatar {
+                        height: 15rem;
+                        width: 15rem;
                         position: relative;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        img
-                        {
+                        img {
                             height: 100%;
                             width: 100%;
                             background-color: #eee;
-                            padding: 5px;
+                            padding: 0.5rem;
                             border-radius: 100%;
                             object-fit: cover;
                         }
-                        .pen_edit
-                        {
+                        .pen_edit {
                             position: absolute;
                             bottom: 0;
                             right: 0;
@@ -441,102 +381,84 @@
                     }
                 }
             }
-            .edit_main
-            {
+            .edit_main {
                 width: 95%;
                 margin: 0 auto;
-                .edit_main_header
-                {
+                .edit_main_header {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     border-bottom: 2px solid #eee;
-                    padding: 10px 0;
-                    .title
-                    {
-                        h3
-                        {
+                    padding: 1rem 0;
+                    .title {
+                        h3 {
                             font-weight: 500;
                         }
                     }
-                    .edit_options
-                    {
+                    .edit_options {
                         display: flex;
-                        .edit_option
-                        {
-                            min-width: 90px;
-                            padding: 5px;
+                        .edit_option {
+                            min-width: 9rem;
+                            padding: 0.5rem;
                             border: 1px solid #ccc;
                             display: flex;
-                            justify-content:center;
-                            align-items:center;
-                            border-radius: 5px;
-                            span
-                            {
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 0.5rem;
+                            span {
                                 text-align: center;
                             }
-                            &:hover
-                            {
+                            &:hover {
                                 cursor: pointer;
                             }
-                            &:active
-                            {
+                            &:active {
                                 transform: scale(0.95);
                             }
                         }
-                        .cancel_option
-                        {
+                        .cancel_option {
                             margin-right: 10px;
                             border-color: rgb(255, 75, 86);
                             color: grey;
                             font-weight: 500;
                         }
-                        .save_option
-                        {
-                            background-color:rgb(255, 75, 86);
+                        .save_option {
+                            background-color: rgb(255, 75, 86);
                             color: #fff;
                         }
                     }
                 }
-                .edit_name_main
-                {
-                    margin-top: 5px;
-                    .edit_main_container
-                    {
-                        label
-                        {
-                            font-size:  15px;
-                            padding: 10px;
+                .edit_name_main {
+                    margin-top: 0.5rem;
+                    .edit_main_container {
+                        label {
+                            font-size: 1.5rem;
+                            padding: 1rem;
                             text-transform: uppercase;
                             font-weight: 500;
                             color: grey;
                         }
-                        input, textarea
-                        {
+                        input,
+                        textarea {
                             border: 1px solid #eee;
                             outline: none;
-                            font-size: 16px;
-                            padding: 5px 10px;
+                            font-size: 1.6rem;
+                            padding: 0.5rem 1rem;
                             border-radius: 5px;
                             background-color: rgba(255, 75, 87, 0.007);
-                            &:focus
-                            {
-                                border-color:rgb(255, 75, 86);
+                            &:focus {
+                                border-color: rgb(255, 75, 86);
                                 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                             }
                         }
-                        .edit_element
-                        {
+                        .edit_element {
                             display: flex;
                             width: 40%;
                             flex-direction: column;
-                            margin-bottom: 10px;
+                            margin-bottom: 1rem;
                         }
-                        .about_me
-                        {   
+                        .about_me {
                             width: 100%;
-                            textarea
-                            {   
+                            textarea {
                                 width: 100%;
                                 resize: none;
                             }

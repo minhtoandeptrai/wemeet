@@ -10,7 +10,6 @@ const loadFamousPeople = () => {
                 let div = document.createElement('div');
                 div.className = 'whotofollow_item'
                 div.innerHTML = `
-                    <div class="whotofollow_item"> 
                     <div class="follow_container">
                         <div class="follow_ava">
                             <img src="${people.avatar}" alt="">
@@ -28,9 +27,8 @@ const loadFamousPeople = () => {
                             <span>
                                 Follow
                             </span>
-                        </button>
-                </div>
-                    `
+                        </button>`
+
                 whotofollow_wrapper.appendChild(div)
             })
         })

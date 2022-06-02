@@ -176,7 +176,7 @@ setTimeout(() => {
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 `
-                                        list.appendChild(div)
+                            list.appendChild(div)
                                         updateList(div)
                                     })
                                 })

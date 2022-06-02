@@ -11,12 +11,12 @@
             }
             .blog_wrapper::-webkit-scrollbar-thumb {
                 background-color: rgba(128, 128, 129, 0.5);
-                border-radius: 10px;
+                border-radius: 1rem;
             }
         }
         .blog_wrapper {
             overflow-y: scroll;
-            padding: 10px;
+            padding: 1rem;
             height: inherit;
             width: 100%;
             display: flex;
@@ -25,8 +25,8 @@
         .blog_item {
             width: 100%;
             display: flex;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
             border-bottom: 1px solid #eee;
             &_avatar {
                 display: block;
@@ -34,8 +34,8 @@
                 width: 10%;
                 span {
                     display: block;
-                    width: 50px;
-                    height: 50px;
+                    width: 5rem;
+                    height: 5rem;
                     img {
                         display: block;
                         width: 100%;
@@ -51,28 +51,29 @@
                 flex-direction: column;
                 .blog_item_infor {
                     width: 100%;
-                    margin-bottom: 10px;
-                    padding: 2px 0;
+                    margin-bottom: 1rem;
+                    padding: 0.2rem 0;
                     &_name {
+                        font-size: 1.5rem;
                         font-weight: 500;
                         display: flex;
                         align-items: center;
                         .age {
-                            margin-left: 5px;
+                            margin-left: 0.5rem;
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            width: 40px;
-                            height: 18px;
-                            font-size: 11px;
-                            border-radius: 20px;
+                            width: 4rem;
+                            height: 1.8rem;
+                            font-size: 1.1rem;
+                            border-radius: 2rem;
                             background-color: rgba(255, 0, 0, 0.147);
                         }
                     }
                     .blog_time {
                         margin-top: -5px;
                         color: var(--hover-color);
-                        font-size: 13.5px;
+                        font-size: 1.35rem;
                         span {
                             font-family: none;
                             font-weight: 600;
@@ -82,18 +83,21 @@
                 .blog_item_content {
                     width: 100%;
                     .blog_caption {
+                        margin-bottom: 10px;
                         span {
-                            font-size: 16px;
+                            font-weight: 500;
+                            font-size: 1.8rem;
+                            font-style: italic;
                         }
                     }
                     .blog_img {
                         align-items: center;
                         justify-content: center;
-                        padding: 5px 0;
+                        padding: 0.5rem 0;
                         img {
                             width: 100%;
-                            height: 350px;
-                            border-radius: 10px;
+                            height: 35rem;
+                            border-radius: 1rem;
                         }
                     }
                 }
@@ -101,7 +105,8 @@
                     display: flex;
                     justify-content: flex-end;
                     &_status {
-                        padding: 10px;
+                        padding: 1rem;
+                        font-size: 1.5rem;
                         cursor: pointer;
                         &:active {
                             transform: scale(0.98);
@@ -109,7 +114,7 @@
                     }
                 }
                 .comment_to_blog {
-                    height: 40px;
+                    height: 4rem;
                     width: 100%;
                     transition: all 0.2s;
                     display: none;
@@ -120,8 +125,8 @@
                         width: 100%;
                         height: 100%;
                         .your_avatar {
-                            width: 36px;
-                            height: 36px;
+                            width: 3.6rem;
+                            height: 3.6rem;
                             img {
                                 width: 100%;
                                 height: 100%;
@@ -129,7 +134,7 @@
                             }
                         }
                         .text_to {
-                            width: calc(100% - 45px);
+                            width: calc(100% - 4.5rem);
                             display: flex;
                             height: 100%;
                             align-items: center;
@@ -138,18 +143,19 @@
                             input {
                                 width: 100%;
                                 height: 100%;
-                                border-radius: 20px;
-                                padding: 0 12px;
+                                border-radius: 2rem;
+                                padding: 0 1.2rem;
                                 outline: none;
                                 border: none;
                                 background-color: rgb(240, 242, 245);
-                                font-size: 15px;
+                                font-size: 1.5rem;
                                 color: #333;
                             }
                             .fa-paper-plane {
                                 position: absolute;
                                 right: 0;
                                 top: 50%;
+                                font-size: 1.5rem;
                                 transform: translate(-100%, -50%);
                                 color: #333;
                                 &:hover {
@@ -164,8 +170,8 @@
             .comment_container {
                 display: block;
                 width: 100%;
-                margin-top: 10px;
-                padding: 5px 0;
+                margin-top: 1rem;
+                padding: 0.5rem 0;
                 .comment_list {
                     display: flex;
                     flex-direction: column;
@@ -175,13 +181,13 @@
                         display: flex;
                         justify-content: space-between;
                         align-items: flex-start;
-                        margin-top: 12px;
+                        margin-top: 1.2rem;
                         transition: all 0.5s;
                         .avatar {
                             width: 8%;
                             img {
-                                width: 40px;
-                                height: 40px;
+                                width: 4rem;
+                                height: 4rem;
                                 border-radius: 100%;
                             }
                         }
@@ -200,7 +206,7 @@
                                     width: 70%;
                                     word-wrap: break-word;
                                     font-weight: 400;
-                                    font-size: 13.5px;
+                                    font-size: 1.35rem;
                                     color: rgb(110, 103, 103);
                                 }
                             }
@@ -208,7 +214,7 @@
                                 display: flex;
                                 @include none--style;
                                 li {
-                                    font-size: 12px;
+                                    font-size: 1.2rem;
                                     margin-right: 15px;
                                     font-weight: 400;
                                     color: grey;
@@ -217,6 +223,7 @@
                             }
                         }
                         .comment_heart {
+                            font-size: 1.5rem;
                             width: 2%;
                             cursor: pointer;
                         }
