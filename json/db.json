@@ -1,10 +1,11 @@
 {
-  "user": [{
+  "user": [
+    {
       "id": 1,
       "name": "JD Chow",
       "nickname": "@jdvow",
       "from": "USA",
-      "following": 12,
+      "following": 13,
       "follower": 10,
       "avatar": "../img/userlist/chow.avif",
       "quotes": "Emptiness comes as a sunset comes of an evening, full of beauty, enchantment, and richness; it comes as naturally as the blossoming of a flower."
@@ -40,15 +41,18 @@
       "quotes": "When I kill an Arab, a Jew, a Muslim, a Hindu, a communist, whatever it is, I am killing myself. I wonder if you realise this, basically"
     }
   ],
-  "userPosts": [{
-    "userID": "4",
-    "postContent": "",
-    "postCmt": 0,
-    "postLike": 0,
-    "postImg": "https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/11/9/photo1636418548532-16364185487161813582285.jpg",
-    "id": 5
-  }],
-  "people": [{
+  "userPosts": [
+    {
+      "userID": "4",
+      "postContent": "",
+      "postCmt": 0,
+      "postLike": 0,
+      "postImg": "https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/11/9/photo1636418548532-16364185487161813582285.jpg",
+      "id": 5
+    }
+  ],
+  "people": [
+    {
       "id": "1",
       "username": "Nhiet Ba",
       "age": "18",
@@ -209,7 +213,8 @@
       ]
     }
   ],
-  "posts": [{
+  "posts": [
+    {
       "id": 1,
       "name": "Brooker Angle",
       "age": "19",
@@ -259,7 +264,8 @@
       "img": "../img/posts/6.avif"
     }
   ],
-  "well_know": [{
+  "well_know": [
+    {
       "name": "Elon Musk",
       "nickname": "@theeelonmusk",
       "avatar": "../img/follow/musk.jpg"
@@ -320,7 +326,8 @@
       "avatar": "../img/follow/mariah.jpg"
     }
   ],
-  "commentList": [{
+  "commentList": [
+    {
       "id": 1,
       "postID": 1,
       "author": "Johny Dang",

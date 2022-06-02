@@ -324,6 +324,7 @@ body {
   align-items: center;
 }
 .options .people__container .people__item .slide__picture__container .arrow_slide .arrow_wrapp {
+  font-size: 1.5rem;
   height: 4rem;
   width: 4rem;
   border-radius: 4rem;
@@ -437,7 +438,7 @@ body {
   background-color: rgba(240, 128, 128, 0.15);
 }
 .options .people__container .people__item .information__container .aboutyou {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--hover-color);
   font-style: italic;
@@ -463,10 +464,10 @@ body {
   text-decoration: none;
   margin-right: 2rem;
   font-weight: 500;
-  font-size: 1.6rem;
-  padding: 0.9rem 2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
   background-color: rgba(144, 238, 144, 0.327);
-  border-radius: 2rem;
+  border-radius: 1rem;
   color: var(--hover-color);
 }
 
