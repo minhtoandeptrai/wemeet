@@ -1,14 +1,15 @@
-setTimeout( ()=>{
-    const callLoading = document.querySelector('#mess-btn')
-    callLoading.addEventListener('click',() =>{
-        const loadContainer = () =>{
-            showLoading()
-            setTimeout(()=>{
-                const option = document.querySelector('.options')
-                let div = document.createElement('div')
-                div.className = 'message options'
-                div.innerHTML =
-                `
+/** @format */
+
+setTimeout(() => {
+  const callLoading = document.querySelector("#mess-btn");
+  callLoading.addEventListener("click", () => {
+    const loadContainer = () => {
+      showLoading();
+      setTimeout(() => {
+        const option = document.querySelector(".options");
+        let div = document.createElement("div");
+        div.className = "message options";
+        div.innerHTML = `
                 <div class="message_container">
                     <div class="message_header">
                         <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -28,19 +29,16 @@ setTimeout( ()=>{
                         </div>
                     </div>
                 </div>
-                `
-                if(option)
-                {
-                    main_container.removeChild(option)
-                    main_container.appendChild(div)
-                }
-                else
-                {
-                    main_container.appendChild(div)
-                }
-                hideLoading()
-            },1000)
+                `;
+        if (option) {
+          main_container.removeChild(option);
+          main_container.appendChild(div);
+        } else {
+          main_container.appendChild(div);
         }
-        loadContainer()
-    })
-},600)
+        hideLoading();
+      }, 1000);
+    };
+    loadContainer();
+  });
+}, 600);

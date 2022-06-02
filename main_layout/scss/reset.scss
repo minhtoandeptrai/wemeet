@@ -1,26 +1,28 @@
+/** @format */
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 62.5%;
-    line-height: 1.6rem;
+  font-size: 62.5%;
+  line-height: 1.6rem;
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 img,
@@ -28,16 +30,16 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
-    outline: none;
+  font: inherit;
+  outline: none;
 }
 
 p,
@@ -47,14 +49,14 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 h2 {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 * {
-    font-family: 'roboto', 'sora', sans-serif;
-    box-sizing: border-box;
+  font-family: "roboto", "sora", sans-serif;
+  box-sizing: border-box;
 }

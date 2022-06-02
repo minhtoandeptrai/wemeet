@@ -1,10 +1,12 @@
+/** @format */
+
 .addlikes {
-    display: block;
-    position: absolute;
-    z-index: 9999999999;
-    transition: all 1s;
-    .heart {
-        font-size: 3rem;
-        color: red;
-    }
+  display: block;
+  position: absolute;
+  z-index: 9999999999;
+  transition: all 1s;
+  .heart {
+    font-size: 3rem;
+    color: red;
+  }
 }

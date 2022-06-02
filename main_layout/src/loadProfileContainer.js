@@ -1,21 +1,22 @@
+/** @format */
+
 setTimeout(() => {
-    let id = sessionStorage.getItem('id')
-    const callLoading = document.querySelector('#profile-btn')
-    callLoading.addEventListener('click', () => {
-        const loadContainer = () => {
-            fetch(`http://localhost:3000/user?id=${id}`)
-                .then(response => {
-                    showLoading()
-                    return response.json()
-                })
-                .then(datas => {
-                    setTimeout(() => {
-                        datas.forEach((data) => {
-                            const option = document.querySelector('.options')
-                            let div = document.createElement('div')
-                            div.className = 'profile options'
-                            div.innerHTML =
-                                `
+  let id = sessionStorage.getItem("id");
+  const callLoading = document.querySelector("#profile-btn");
+  callLoading.addEventListener("click", () => {
+    const loadContainer = () => {
+      fetch(`http://localhost:3000/user?id=${id}`)
+        .then((response) => {
+          showLoading();
+          return response.json();
+        })
+        .then((datas) => {
+          setTimeout(() => {
+            datas.forEach((data) => {
+              const option = document.querySelector(".options");
+              let div = document.createElement("div");
+              div.className = "profile options";
+              div.innerHTML = `
                                     <div class="edit_profile">
                                         <div class="edit_profile_container">
                                             <div class="edit_image">
@@ -115,57 +116,58 @@ setTimeout(() => {
                                             </div>
                                         </div>
                                     </div>
-                                    `
-                            if (option) {
-                                main_container.removeChild(option)
-                                main_container.appendChild(div)
-                            } else {
-                                main_container.appendChild(div)
-                            }
-                        })
-                        hideLoading()
-                    }, 0)
-                })
-                .then(() => {
-                    setTimeout(() => {
-                        editProfile()
-                        mypost()
-                    }, 200)
-                })
+                                    `;
+              if (option) {
+                main_container.removeChild(option);
+                main_container.appendChild(div);
+              } else {
+                main_container.appendChild(div);
+              }
+            });
+            hideLoading();
+          }, 0);
+        })
+        .then(() => {
+          setTimeout(() => {
+            editProfile();
+            mypost();
+          }, 200);
+        });
 
-            function editProfile() {
-                const editBtn = document.querySelector('.setup_profile')
-                editProfileSave()
-                const editContainer = document.querySelector('.edit_profile')
-                editBtn.addEventListener('click', () => {
-                    editContainer.style.display = 'block'
-                })
-                const cancle = document.querySelector('.edit_options')
-                cancle.addEventListener('click', () => {
-                    editContainer.style.display = 'none'
-                })
-            }
-        }
+      function editProfile() {
+        const editBtn = document.querySelector(".setup_profile");
+        editProfileSave();
+        const editContainer = document.querySelector(".edit_profile");
+        editBtn.addEventListener("click", () => {
+          editContainer.style.display = "block";
+        });
+        const cancle = document.querySelector(".edit_options");
+        cancle.addEventListener("click", () => {
+          editContainer.style.display = "none";
+        });
+      }
+    };
 
-        loadContainer()
-    })
+    loadContainer();
+  });
 
-    function mypost() {
-        const postWrapper = document.querySelector('.post_wrapper')
-        fetch(`http://localhost:3000/userPosts?userID=${id}`)
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                console.log(data)
-                data.forEach((item) => {
-                    let div = document.createElement('div')
-                    div.className = 'post_item'
-                    div.innerHTML =
-                        `
+  function mypost() {
+    const postWrapper = document.querySelector(".post_wrapper");
+    fetch(`http://localhost:3000/userPosts?userID=${id}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        data.forEach((item) => {
+          let div = document.createElement("div");
+          div.className = "post_item";
+          div.innerHTML = `
                             <div class="post_item_avatar">
                                 <span>
-                                    <img src="${sessionStorage.getItem("img")}" alt="">
+                                    <img src="${sessionStorage.getItem(
+																			"img"
+																		)}" alt="">
                                 </span>
                                 </div>
                                 <div class="post_item_main">
@@ -188,46 +190,46 @@ setTimeout(() => {
                                     </div>
                                 </div>
                                 </div>
-                            `
-                    postWrapper.appendChild(div)
-                })
-            })
-    }
-}, 500)
+                            `;
+          postWrapper.appendChild(div);
+        });
+      });
+  }
+}, 500);
 
 function editProfileSave() {
-    const saveOption = document.querySelector('.save_option')
-    saveOption.addEventListener('click', () => {
-        let nameReplace = document.querySelector('#form_edit_name').value
-        let nickNameReplace = document.querySelector('#form_edit_nickname').value
-        let storyReplace = document.querySelector('#form_edit_story').value
-        if (nameReplace) {
-            let object = {
-                "name": nameReplace
-            }
-            replace(object)
-        }
-        if (nickNameReplace) {
-            let object = {
-                "nickname": nickNameReplace
-            }
-            replace(object)
-        }
-        if (storyReplace) {
-            let object = {
-                "quotes": storyReplace
-            }
-            replace(object)
-        }
-    })
-
-    function replace(data) {
-        fetch(`http://localhost:3000/user/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
+  const saveOption = document.querySelector(".save_option");
+  saveOption.addEventListener("click", () => {
+    let nameReplace = document.querySelector("#form_edit_name").value;
+    let nickNameReplace = document.querySelector("#form_edit_nickname").value;
+    let storyReplace = document.querySelector("#form_edit_story").value;
+    if (nameReplace) {
+      let object = {
+        name: nameReplace,
+      };
+      replace(object);
     }
+    if (nickNameReplace) {
+      let object = {
+        nickname: nickNameReplace,
+      };
+      replace(object);
+    }
+    if (storyReplace) {
+      let object = {
+        quotes: storyReplace,
+      };
+      replace(object);
+    }
+  });
+
+  function replace(data) {
+    fetch(`http://localhost:3000/user/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  }
 }

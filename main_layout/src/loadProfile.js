@@ -1,17 +1,19 @@
-const sideBarContainer = document.querySelector('.side__bar')
-let id = sessionStorage.getItem('id')
+/** @format */
+
+const sideBarContainer = document.querySelector(".side__bar");
+let id = sessionStorage.getItem("id");
 fetch(`http://localhost:3000/user?id=${id}`)
-    .then(res => {
-        return res.json()
-    })
-    .then(datas => {
-        datas.forEach((data) => {
-            sessionStorage.setItem('img', data.avatar)
-            sessionStorage.setItem('name', data.name)
-            sessionStorage.setItem('followQty', data.following)
-            let div = document.createElement('div');
-            div.className = 'side__bar__container'
-            div.innerHTML = `
+  .then((res) => {
+    return res.json();
+  })
+  .then((datas) => {
+    datas.forEach((data) => {
+      sessionStorage.setItem("img", data.avatar);
+      sessionStorage.setItem("name", data.name);
+      sessionStorage.setItem("followQty", data.following);
+      let div = document.createElement("div");
+      div.className = "side__bar__container";
+      div.innerHTML = `
             <div class="mode">
                 <ul>
                     <li id="home-btn" class ="sidebar-btn">
@@ -45,11 +47,11 @@ fetch(`http://localhost:3000/user?id=${id}`)
                         </div>
                         <div style="width: 80%; display: flex;justify-content: space-between; align-items: center;padding: 0 10px">
                             <div class="account_infor">
-                                <span style="color:#000; font-weight:450">${data.name}</span>
-                                <span>${data.nickname}</span>
+                                <span style="color:#000; font-weight:450; font-size: 1.5rem">${data.name}</span>
+                            <span style="font-size:1.4rem">${data.nickname}</span>
                             </div>
                             <div id="load_more">
-                            <i class="fa-solid fa-ellipsis"></i>
+                            <i class="fa-solid fa-ellipsis" style="font-size: 1.5rem"></i>
                             </div>
                             <div class ="setting">
                             <div style=" padding: 10px;border-bottom: 1px solid #eee">
@@ -57,54 +59,54 @@ fetch(`http://localhost:3000/user?id=${id}`)
                                 <img src="${data.avatar}">
                             </div>
                             </div>
-                                <span id="log-out">Log out ${data.nickname}</span>
-                                <span>Add an Exist account</span>
+                                <span id="log-out" style="font-size: 1.5rem ">Log out ${data.nickname}</span>
+                                <span style="font-size: 1.5rem ">Add an Exist account</span>
                                 <div class="arrow-down"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                    `
-            sideBarContainer.appendChild(div)
-        })
-    })
-    .then(() => {
-        logOut()
-        activeSidebarBtn()
-        showLogOut()
-    })
+                    `;
+      sideBarContainer.appendChild(div);
+    });
+  })
+  .then(() => {
+    logOut();
+    activeSidebarBtn();
+    showLogOut();
+  });
 
 function activeSidebarBtn() {
-    const sideBarBtn = document.querySelectorAll('.sidebar-btn')
-    sideBarBtn.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const activedBtn = document.querySelector('.active')
-            if (activedBtn) {
-                activedBtn.classList.remove('active')
-            }
-            btn.classList.add('active')
-        })
-    })
+  const sideBarBtn = document.querySelectorAll(".sidebar-btn");
+  sideBarBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const activedBtn = document.querySelector(".active");
+      if (activedBtn) {
+        activedBtn.classList.remove("active");
+      }
+      btn.classList.add("active");
+    });
+  });
 }
 
 function showLogOut() {
-    const showBtn = document.querySelector('#load_more')
-    const logOut = document.querySelector('.setting')
-    console.log(logOut)
-    console.log(showBtn)
-    showBtn.addEventListener('click', (e) => {
-        e.stopPropagation()
-        logOut.style.display = 'flex'
-    })
-    document.addEventListener('click', () => {
-        logOut.style.display = 'none'
-    })
+  const showBtn = document.querySelector("#load_more");
+  const logOut = document.querySelector(".setting");
+  console.log(logOut);
+  console.log(showBtn);
+  showBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    logOut.style.display = "flex";
+  });
+  document.addEventListener("click", () => {
+    logOut.style.display = "none";
+  });
 }
 
 function logOut() {
-    const logOutBtn = document.querySelector('#log-out')
-    logOutBtn.addEventListener('click', () => {
-        window.location = "../../index.html"
-    })
+  const logOutBtn = document.querySelector("#log-out");
+  logOutBtn.addEventListener("click", () => {
+    window.location = "../../index.html";
+  });
 }

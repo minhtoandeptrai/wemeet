@@ -1,14 +1,15 @@
+/** @format */
+
 setTimeout(() => {
-    const callLoading = document.querySelector('#notifications-btn')
-    callLoading.addEventListener('click', () => {
-        const loadContainer = () => {
-            showLoading()
-            setTimeout(() => {
-                const option = document.querySelector('.options')
-                let div = document.createElement('div')
-                div.className = 'notifications options'
-                div.innerHTML =
-                    `
+  const callLoading = document.querySelector("#notifications-btn");
+  callLoading.addEventListener("click", () => {
+    const loadContainer = () => {
+      showLoading();
+      setTimeout(() => {
+        const option = document.querySelector(".options");
+        let div = document.createElement("div");
+        div.className = "notifications options";
+        div.innerHTML = `
                 <div class="notifications_container">
                     <div class="notifications_header">
                         <h2>Notifications</h2>
@@ -43,7 +44,9 @@ setTimeout(() => {
                                     <i class="fa-solid fa-paper-plane"></i>
                                 </div>
                                 <div class="notifications_item_content">
-                                    <span>There was an attempt to log in to your account @${sessionStorage.getItem('name')} on 21 thg 5, 2022 that seems suspicious. Review it now.</span>
+                                    <span>There was an attempt to log in to your account @${sessionStorage.getItem(
+																			"name"
+																		)} on 21 thg 5, 2022 that seems suspicious. Review it now.</span>
                                 </div>
                             </div>
                             <div class="notifications_item">
@@ -57,16 +60,16 @@ setTimeout(() => {
                         </div> 
                     </div>
                 </div>
-                `
-                if (option) {
-                    main_container.removeChild(option)
-                    main_container.appendChild(div)
-                } else {
-                    main_container.appendChild(div)
-                }
-                hideLoading()
-            }, 1000)
+                `;
+        if (option) {
+          main_container.removeChild(option);
+          main_container.appendChild(div);
+        } else {
+          main_container.appendChild(div);
         }
-        loadContainer()
-    })
-}, 600)
+        hideLoading();
+      }, 1000);
+    };
+    loadContainer();
+  });
+}, 600);

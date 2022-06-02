@@ -1,3 +1,4 @@
+/** @format */
 *,
 *::before,
 *::after {
@@ -59,6 +60,7 @@ h2 {
   box-sizing: border-box;
 }
 
+/** @format */
 body {
   position: relative;
   font-size: 100%;
@@ -137,12 +139,17 @@ body {
   padding: 1rem 2rem;
   background-color: var(--main-color);
   border-radius: 1rem;
-  color: var(--blue-background);
+  color: #fff;
 }
 .main_container .logo_chat h2:hover {
   cursor: pointer;
 }
+.main_container .logo_chat h2:active {
+  transform: scale(0.95);
+}
 
+/** @format */
+/** @format */
 .side__bar {
   width: 22%;
   display: block;
@@ -256,6 +263,7 @@ body {
   font-weight: 500;
 }
 
+/** @format */
 :root {
   --bgc: hwb(233 96% 0%);
   --fontsizeS: 17px;
@@ -269,6 +277,7 @@ body {
   --light-greeen: rgb(110, 205, 110);
 }
 
+/** @format */
 .options {
   position: relative;
   width: 100%;
@@ -461,6 +470,7 @@ body {
   color: var(--hover-color);
 }
 
+/** @format */
 .profile {
   position: relative;
   padding: 0;
@@ -934,6 +944,7 @@ body {
   resize: none;
 }
 
+/** @format */
 .notifications {
   padding: 0;
 }
@@ -1018,6 +1029,7 @@ body {
   transform: scale(0.995);
 }
 
+/** @format */
 .whotofollow {
   padding: 0.5rem;
   width: 24%;
@@ -1136,12 +1148,14 @@ body {
   margin-right: 0.5rem;
 }
 
+/** @format */
 main {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/** @format */
 .blog {
   padding: 0;
 }
@@ -1392,6 +1406,7 @@ main {
   color: rgba(255, 0, 0, 0.7);
 }
 
+/** @format */
 .header {
   width: 100%;
   display: flex;
@@ -1432,6 +1447,7 @@ main {
   cursor: pointer;
 }
 
+/** @format */
 .home {
   padding: 0;
   overflow: hidden;
@@ -1578,6 +1594,7 @@ main {
   color: rgb(110, 205, 110);
 }
 
+/** @format */
 .message {
   padding: 0;
 }

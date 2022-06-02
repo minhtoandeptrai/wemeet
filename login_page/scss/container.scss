@@ -1,106 +1,91 @@
-.container
-{
-    height: 650px;
-    margin-top: 10px;
-    background-color: var(--bgc);
-    background-image: url(../img/newproject.png);
-    border-radius: 10px;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    #dating_title
-    {
-        font-family: none;
-        font-weight: normal;
-        font-size: 3.5em;
-        #forevery
-        {
-            @include color--gradient;
-            font-style: italic;
-        }
-    }
-    p
-    {
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
-    .container__left__wrapper
-    {
-        width: 60%;
-        z-index: 1;
-        .main__container__left
-        {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-        
-            .download
-            {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                &__apple, &__google
-                {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 5px 20px;
-                    border: 2px solid rgba(81, 81, 226, 0.208);
-                    border-radius: 10px;
-                    box-shadow: 0 0 10px rgba(81, 81, 226, 0.208);
-                    margin-right: 20px;
-                    transition: all 0.1s;
-                    &:hover
-                    {
-                        cursor: pointer;
-                        transform: scale(1.05);
-                    }
-                    &:active
-                    {
-                        transform: scale(0.99);
-                    }
-                }
-                p
-                {
-                    margin-bottom: 0;
-                }
-             
-            }
-        }
-    }
-    .container__right
-    {
-        display: flex;
-        position: relative;
-        width: 50%;
-        height: 100%;
-        .girl__img, .boy__img
-        {
-            position: absolute;
-            display: inline-block;
-            width: 400px;
-            height: 500px;
-            img
-            {
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
+/** @format */
 
-            }
-        }
-        .girl__img
-        {
-            z-index: 0;
-            top: 0;
-            left: 0;
-            transform: translateX(-40%);
-        }
-        .boy__img
-        {
-            bottom: 0;
-            right: 0;
-        }
+.container {
+  height: 650px;
+  margin-top: 10px;
+  background-color: var(--bgc);
+  background-image: url(../img/newproject.png);
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  #dating_title {
+    font-family: none;
+    font-weight: normal;
+    font-size: 3.5em;
+    #forevery {
+      @include color--gradient;
+      font-style: italic;
     }
+  }
+  p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .container__left__wrapper {
+    width: 60%;
+    z-index: 1;
+    .main__container__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      .download {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__apple,
+        &__google {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 20px;
+          border: 2px solid rgba(81, 81, 226, 0.208);
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(81, 81, 226, 0.208);
+          margin-right: 20px;
+          transition: all 0.1s;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+          }
+          &:active {
+            transform: scale(0.99);
+          }
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .container__right {
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    .girl__img,
+    .boy__img {
+      position: absolute;
+      display: inline-block;
+      width: 400px;
+      height: 500px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+    .girl__img {
+      z-index: 0;
+      top: 0;
+      left: 0;
+      transform: translateX(-40%);
+    }
+    .boy__img {
+      bottom: 0;
+      right: 0;
+    }
+  }
 }

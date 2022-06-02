@@ -1,33 +1,35 @@
+/** @format */
+
 .header {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 6rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  #logo {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    @include color--gradient;
+    font-size: 3rem;
+  }
+  #tool {
+    font-family: "sora";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    height: 6rem;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    #logo {
-        font-family: sans-serif;
-        font-weight: 600;
-        font-style: italic;
-        @include color--gradient;
-        font-size: 3rem;
+    font-size: 1.7rem;
+    transition: all 0.2s;
+    span {
+      padding: 0.5rem 1rem;
+      color: var(--light-grey);
+      &:hover {
+        color: var(--hover-color);
+        cursor: pointer;
+      }
     }
-    #tool {
-        font-family: 'sora';
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.7rem;
-        transition: all 0.2s;
-        span {
-            padding: 0.5rem 1rem;
-            color: var(--light-grey);
-            &:hover {
-                color: var(--hover-color);
-                cursor: pointer;
-            }
-        }
-    }
+  }
 }
