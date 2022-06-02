@@ -5,7 +5,7 @@
       "name": "JD Chow",
       "nickname": "@jdvow",
       "from": "USA",
-      "following": 13,
+      "following": 31,
       "follower": 10,
       "avatar": "../img/userlist/chow.avif",
       "quotes": "Emptiness comes as a sunset comes of an evening, full of beauty, enchantment, and richness; it comes as naturally as the blossoming of a flower."
@@ -25,7 +25,7 @@
       "name": "Daniel Apodaca",
       "nickname": "@deaotheia",
       "from": "VNA",
-      "following": 15,
+      "following": 30,
       "follower": 10,
       "avatar": "../img/userlist/Danielapodaca.avif",
       "quotes": "You must understand the whole of life, not just one part of it. That is why you must read, that is why you must look at the skies, why you must sing,dance and write poems, and suffer, and understand, for all that is life"
@@ -56,7 +56,7 @@
       "id": "1",
       "username": "Nhiet Ba",
       "age": "18",
-      "farFrom": "12",
+      "nickName": "@yourlifeinmeyes",
       "selfIntroduce": "The most important thing in my life is you",
       "passion_1": "photo",
       "passion_2": "music",
@@ -72,7 +72,7 @@
       "id": "2",
       "username": "Duong Mich",
       "age": "28",
-      "farFrom": "40",
+      "nickName": "@cormac",
       "selfIntroduce": "You are my sun shine",
       "passion_1": "photo",
       "passion_2": "music",
@@ -88,7 +88,7 @@
       "id": "3",
       "username": "Ji-eun",
       "age": "20",
-      "farFrom": "50",
+      "nickName": "@gabrie",
       "selfIntroduce": "To live is to fight",
       "passion_1": "food",
       "passion_2": "music",
@@ -104,7 +104,7 @@
       "id": "4",
       "username": "Tea-hye",
       "age": "40",
-      "farFrom": "100",
+      "nickName": "@harvey",
       "selfIntroduce": "The healthy equals beautiful",
       "passion_1": "food",
       "passion_2": "music",
@@ -120,7 +120,7 @@
       "id": "5",
       "username": "Lisa",
       "age": "20",
-      "farFrom": "50",
+      "nickName": "@kasper",
       "selfIntroduce": "A man falls in love through his eyes, a woman through her ears",
       "passion_1": "food",
       "passion_2": "music",
@@ -136,7 +136,7 @@
       "id": "6",
       "username": "Ogze Yagiz",
       "age": "20",
-      "farFrom": "50",
+      "nickName": "@localgrimreaper",
       "selfIntroduce": "Never frown, even when you are sad, because you never know who is falling in love with your smile",
       "passion_1": "food",
       "passion_2": "music",
@@ -152,7 +152,7 @@
       "id": "7",
       "username": "Trieu Le Dinh",
       "age": "30",
-      "farFrom": "50",
+      "nickName": "@kenzie",
       "selfIntroduce": "Dont waste your time on a man/woman, who isnt willing to waste their time on you",
       "passion_1": "food",
       "passion_2": "music",
@@ -168,7 +168,7 @@
       "id": "8",
       "username": "Trieu Lo Tu",
       "age": "30",
-      "farFrom": "50",
+      "nickName": "@morgana",
       "selfIntroduce": "You know when you love someone when you want them to be happy even if their happiness means that youre not part of it",
       "passion_1": "food",
       "passion_2": "music",
@@ -184,7 +184,7 @@
       "id": "9",
       "username": "Truong Tu Lam",
       "age": "31",
-      "farFrom": "50",
+      "nickName": "#puppydrowner",
       "selfIntroduce": "You can accomplish by kindness what you cannot by force",
       "passion_1": "food",
       "passion_2": "music",
@@ -200,7 +200,7 @@
       "id": "10",
       "username": "Ribi Sachi",
       "age": "31",
-      "farFrom": "50",
+      "nickName": "@smilingsadist",
       "selfIntroduce": "You can accomplish by kindness what you cannot by forceThere is no happiness in having or in getting, but only in giving",
       "passion_1": "food",
       "passion_2": "music",
@@ -341,5 +341,93 @@
       "avatar": "../img/userlist/aldo.avif",
       "id": 2
     }
-  ]
+  ],
+  "followingList": [
+    {
+      "userID": "3",
+      "name": "Elon Musk",
+      "nickName": "@theeelonmusk",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
+      "id": 4
+    },
+    {
+      "userID": "3",
+      "name": "Bill Gates",
+      "nickName": "@theeebill",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/billgate.jpg",
+      "id": 5
+    },
+    {
+      "userID": "3",
+      "name": "Emma waston",
+      "nickName": "@wasemton",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/emma.jpg",
+      "id": 6
+    },
+    {
+      "userID": "3",
+      "name": "Elon Musk",
+      "nickName": "@theeelonmusk",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
+      "id": 7
+    },
+    {
+      "userID": "3",
+      "name": "Justin Bieber",
+      "nickName": "@bieber1101",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
+      "id": 8
+    },
+    {
+      "userID": "2",
+      "name": "Justin Bieber",
+      "nickName": "@bieber1101",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
+      "id": 10
+    },
+    {
+      "userID": "2",
+      "name": "Bill Gates",
+      "nickName": "@theeebill",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/billgate.jpg",
+      "id": 11
+    },
+    {
+      "userID": "1",
+      "name": "Elon Musk",
+      "nickName": "@theeelonmusk",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
+      "id": 12
+    },
+    {
+      "userID": "1",
+      "name": "Justin Bieber",
+      "nickName": "@bieber1101",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
+      "id": 13
+    },
+    {
+      "userID": "1",
+      "name": "Emma waston",
+      "nickName": "@wasemton",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/emma.jpg",
+      "id": 14
+    },
+    {
+      "userID": "1",
+      "name": "Bill Gates",
+      "nickName": "@theeebill",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/billgate.jpg",
+      "id": 15
+    },
+    {
+      "userID": "1",
+      "name": "Ed Sheeran",
+      "nickName": "@theeead",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/edsheeran.jpg",
+      "id": 16
+    }
+  ],
+  "followerList": [],
+  "matchingList": []
 }

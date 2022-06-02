@@ -61,7 +61,7 @@ setTimeout(() => {
                                 <div class="infor__name">
                                 <div class="name__age__location">
                                 <span class="people__name">${user.username}, ${user.age}</span>
-                                <span class="location"><i class="fa-solid fa-location-dot"></i> ${user.farFrom}km from you</span>
+                                <span class="key__name"> ${user.nickName}</span>
                                 </div>
                                 </div>
                                 <div class="select__options">
@@ -167,10 +167,28 @@ function moveSlide() {
 function addFollow() {
   const list = document.querySelectorAll(".people__item");
   list.forEach((item) => {
-    item
-      .querySelector(".select__options__match")
+    item.querySelector(".select__options__match")
       .addEventListener("click", (e) => {
-        updateFollow();
+        let name = item.querySelector('.people__name').textContent
+        offname = name.substring(0,name.indexOf(','))
+        let img = item.querySelector('img').src
+        let obj = {
+          "userID": sessionStorage.getItem('id'),
+          "name": `${offname}`,
+          "nickname": `${item.querySelector('.key__name').textContent}`,
+          "avatar": `${img}`
+          }
+          addToFollow(obj)
       });
   });
+}
+function addToFollow(obj)
+{
+  fetch('http://localhost:3000/matchingList', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(obj)
+  }) 
 }

@@ -8,20 +8,13 @@ const showLoading = () => {
 const hideLoading = () => {
   loading.style.display = "none";
 };
-
-function updateFollow() {
-  let followingQuantity = sessionStorage.getItem("followQty");
-  let alterQty = parseInt(followingQuantity);
-  alterQty += 1;
-  sessionStorage.setItem("followQty", alterQty);
-  let id = sessionStorage.getItem("id");
-  fetch(`http://localhost:3000/user/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      following: alterQty,
-    }),
-  });
+function updateFollowCount(option) {
+  let id = sessionStorage.getItem('id');
+  fetch(`http://localhost:3000/${option}?userID=${id}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then(data => {
+      document.querySelector(`.${option}_quantity`).textContent = data.length
+  })
 }

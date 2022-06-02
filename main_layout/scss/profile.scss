@@ -3,11 +3,7 @@
 .profile {
   position: relative;
   padding: 0;
-  @include scrollbar__custom_profile;
-  &:hover {
-    .whotofolloprofile_containerw_container::-webkit-scrollbar-track {
-      background: #eee;
-    }
+&:hover {
     .profile_container::-webkit-scrollbar-thumb {
       background-color: rgba(128, 128, 129, 0.5);
       border-radius: 1rem;
@@ -94,6 +90,10 @@
               .profile_follow_quantity {
                 color: #000;
               }
+            }
+            &:hover
+            {
+              cursor: pointer;
             }
           }
           .profile_join {
@@ -394,6 +394,7 @@
           padding: 1rem 0;
           .title {
             h3 {
+              font-size: 2rem;
               font-weight: 500;
             }
           }
@@ -409,6 +410,7 @@
               border-radius: 0.5rem;
               span {
                 text-align: center;
+                font-size: 1.5rem;
               }
               &:hover {
                 cursor: pointer;
@@ -470,4 +472,154 @@
       }
     }
   }
+  .follow_list {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 1000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		display: none;
+   
+		.follow_list_wrapper {
+			width: 40rem;
+			height: 50rem;
+			background-color: #fff;
+			border-radius: 1rem;
+			overflow: hidden;
+      position: relative;
+       
+      
+			.follow_list_header {
+        position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				border-bottom: 1px solid #eee;
+        #follow_close
+        {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(-100%,-50%);
+          font-size: 2rem;
+          color: #eee;
+          &:hover
+          {
+            color: #000;
+            cursor: pointer;
+          }
+        }
+				.follow_header_key {
+					width: 100%;
+					text-align: center;
+					font-size: 1.7em;
+					font-weight: 500;
+					padding: 1.5rem;
+					&:hover {
+						cursor: pointer;
+					}
+					&:active {
+						transform: scale(0.98);
+					}
+					&:first-child {
+						border-start-start-radius: 1rem;
+					}
+					&:last-child {
+						border-start-end-radius: 1rem;
+					}
+				}
+			}
+			.follow_list_parent {
+				width: 100%;
+				height: 88%;
+				transition: all 0.5s;
+				&:hover {
+					.follow_list_items::-webkit-scrollbar-thumb {
+						background-color: rgba(128, 128, 129, 0.5);
+						border-radius: 1rem;
+					}
+				}
+				.follow_list_items {
+          position: absolute;
+					height: 90%;
+					overflow: hidden;
+					width: 100%;
+					padding: 1rem 1.2rem;
+					flex: 1 0 100%;
+					overflow-y: scroll;
+					.follow_item_container {
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						.follow_list_item {
+							margin-bottom: 1.2rem;
+							.follow_list_item_wrapper {
+                display: flex;
+                justify-content:center;
+                align-items: center;
+								.follow_list_item_avatar {
+									width: 14%;
+									img {
+										width: 5rem;
+										height: 5rem;
+										border-radius: 100%;
+									}
+								}
+								.follow_list_item_main {
+									padding: 0 1.2rem;
+									width: 67%;
+									display: flex;
+									flex-direction: column;
+									justify-content: center;
+									span {
+										font-size: 1.6rem;
+										&:first-child {
+											font-weight: 500;
+										}
+									}
+									.nickname {
+										color: var(--hover-color);
+									}
+								}
+								.follow_list_item_remove {
+									width: 20%;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									span {
+										font-size: 1.5rem;
+										padding: 0.9rem 1rem;
+										background-color: var(--main-color);
+										border-radius: 0.5rem;
+										color: #fff;
+										&:active {
+											transform: scale(0.98);
+										}
+										&:hover {
+											cursor: pointer;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.key_active {
+	color: var(--main-color);
+	font-weight: 650;
+	border-bottom: 1px solid var(--main-color);
+}
+.open_contact
+{
+  display: 'block';
 }

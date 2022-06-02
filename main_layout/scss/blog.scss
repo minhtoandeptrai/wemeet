@@ -6,11 +6,8 @@
     display: block;
     height: inherit;
     overflow: hidden;
-    @include scrollbar__custom_blog;
     &:hover {
-      .blog_wrapper::-webkit-scrollbar-track {
-        background: #eee;
-      }
+      
       .blog_wrapper::-webkit-scrollbar-thumb {
         background-color: rgba(128, 128, 129, 0.5);
         border-radius: 1rem;

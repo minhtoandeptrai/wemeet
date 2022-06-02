@@ -14,14 +14,14 @@ const loadFamousPeople = () => {
         div.innerHTML = `
                     <div class="follow_container">
                         <div class="follow_ava">
-                            <img src="${people.avatar}" alt="">
+                            <img  src="${people.avatar}" alt="">
                         </div>
                         <div>
                             <div class="follow_name">
-                                <span>${people.name}</span>
+                                <span >${people.name}</span>
                             </div>
                             <div class="follow_key">
-                                <span>${people.nickname}</span>
+                                <span >${people.nickname}</span>
                             </div>
                         </div>
                     </div>
@@ -46,12 +46,31 @@ function followAction() {
     const btn = item.querySelector(".follow");
     btn.addEventListener("click", () => {
       whotofollow_wrapper.removeChild(item);
-      updateFollow();
-      showAlertFollow();
+      let id = sessionStorage.getItem("id");
+      let obj = {
+        "userID": id,
+        "name": `${item.querySelector('.follow_name').querySelector('span').textContent}`,
+        "nickName": `${item.querySelector('.follow_key').querySelector('span').textContent}`,
+        "avatar": `${item.querySelector('img').src}`
+      }
+      addToFollowList(obj)  
     });
   });
 }
-
+function addToFollowList(obj)
+{
+  fetch('http://localhost:3000/followingList', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(obj)
+  })
+    .then(() => {
+      showAlertFollow()
+      updateFollowCount('followingList')
+  })
+}
 function showAlertFollow() {
   const alert = document.querySelector(".alert_follow");
   alert.style.display = "block";
