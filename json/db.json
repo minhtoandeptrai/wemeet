@@ -2,8 +2,8 @@
   "user": [
     {
       "id": 1,
-      "name": "JD Chow",
-      "nickname": "@jdvow",
+      "name": "Minh Toan",
+      "nickname": "@msdf",
       "from": "USA",
       "following": 32,
       "follower": 10,
@@ -331,32 +331,39 @@
       "content": "Hello",
       "avatar": "../img/userlist/aldo.avif",
       "id": 4
+    },
+    {
+      "postID": "2",
+      "author": "JD Chow",
+      "content": "hiii",
+      "avatar": "../img/userlist/chow.avif",
+      "id": 5
+    },
+    {
+      "postID": "1",
+      "author": "JD Chow",
+      "content": "Hello",
+      "avatar": "../img/userlist/chow.avif",
+      "id": 6
     }
   ],
   "followingList": [
     {
       "userID": "1",
-      "name": "Emma waston",
-      "nickName": "@wasemton",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/emma.jpg",
-      "id": 1
+      "name": "Justin Bieber",
+      "nickName": "@bieber1101",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
+      "id": 3
     },
     {
       "userID": "1",
-      "name": "Donald Trump",
-      "nickName": "@trumpisthebest",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
-      "id": 2
+      "name": "Emma waston",
+      "nickName": "@wasemton",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/emma.jpg",
+      "id": 4
     }
   ],
   "followerList": [
-    {
-      "userID": 1,
-      "name": "Yuliana",
-      "nickname": "@lala123",
-      "avatar": "https://images.unsplash.com/photo-1644982647531-daff2c7383f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-      "id": 1
-    },
     {
       "userID": 2,
       "name": "Brian Lawson",
@@ -373,10 +380,80 @@
     },
     {
       "userID": 4,
-      "name": "Alireza Esmaeeli",
-      "nickname": "@delimy",
-      "avatar": "https://images.unsplash.com/photo-1646992410268-1cd6f140ef0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      "name": "Linda",
+      "nickname": "@gbarkz",
+      "avatar": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
       "id": 4
+    },
+    {
+      "userID": 4,
+      "name": "SonyHeail",
+      "nickname": "@soniiesheils",
+      "avatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 5
+    },
+    {
+      "userID": 3,
+      "name": "SonyHeail",
+      "nickname": "@soniiesheils",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 6
+    },
+    {
+      "userID": 2,
+      "name": "SonyHeail",
+      "nickname": "@soniiesheils",
+      "avatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 1
+    },
+    {
+      "userID": 1,
+      "name": "Joshua Rondeau",
+      "nickname": "@sonils",
+      "avatar": "https://images.unsplash.com/photo-1604004555489-723a93d6ce74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 8
+    },
+    {
+      "userID": 2,
+      "name": "Joshua Rondeau",
+      "nickname": "@sonils",
+      "avatar": "https://images.unsplash.com/photo-1604004555489-723a93d6ce74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 9
+    },
+    {
+      "userID": 1,
+      "name": "Linda",
+      "nickname": "@gbarkz",
+      "avatar": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+      "id": 10
+    },
+    {
+      "userID": 1,
+      "name": "Patrich Valey",
+      "nickname": "@cinndi",
+      "avatar": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 11
+    },
+    {
+      "userID": 2,
+      "name": "Patrich Valey",
+      "nickname": "@cinndi",
+      "avatar": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 12
+    },
+    {
+      "userID": 3,
+      "name": "Patrich Valey",
+      "nickname": "@cinndi",
+      "avatar": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 13
+    },
+    {
+      "userID": 4,
+      "name": "Patrich Valey",
+      "nickname": "@cinndi",
+      "avatar": "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 14
     }
   ],
   "matchingList": []

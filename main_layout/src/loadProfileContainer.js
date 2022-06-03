@@ -383,8 +383,9 @@ function removeFollowItem(option, id) {
             method: 'DELETE',
           }
         ).then(() => {
-          loadFollowList(option, id);
+          updateFollowCount(option);
         });
+        item.style.display = 'none';
       });
   });
 }
