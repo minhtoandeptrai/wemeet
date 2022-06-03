@@ -1,21 +1,23 @@
 /** @format */
 setTimeout(() => {
-	const id = sessionStorage.getItem("id");
-	const callLoading = document.querySelector("#profile-btn");
-	callLoading.addEventListener("click", () => {
-		const loadContainer = () => {
-			fetch(`http://localhost:3000/user?id=${id}`)
-				.then((response) => {
-					showLoading();
-					return response.json();
-				})
-				.then((datas) => {
-					setTimeout(() => {
-						datas.forEach((data) => {
-							const option = document.querySelector(".options");
-							let div = document.createElement("div");
-							div.className = "profile options";
-							div.innerHTML = `
+  const id = sessionStorage.getItem('id');
+  const callLoading =
+    document.querySelector('#profile-btn');
+  callLoading.addEventListener('click', () => {
+    const loadContainer = () => {
+      fetch(`http://localhost:3000/user?id=${id}`)
+        .then((response) => {
+          showLoading();
+          return response.json();
+        })
+        .then((datas) => {
+          setTimeout(() => {
+            datas.forEach((data) => {
+              const option =
+                document.querySelector('.options');
+              let div = document.createElement('div');
+              div.className = 'profile options';
+              div.innerHTML = `
                                     <div class="edit_profile">
                                         <div class="edit_profile_container">
                                             <div class="edit_image">
@@ -135,70 +137,80 @@ setTimeout(() => {
                                       </div>
                                     </div>
                                     `;
-							if (option) {
-								main_container.removeChild(option);
-								main_container.appendChild(div);
-							} else {
-								main_container.appendChild(div);
-							}
-						});
-						hideLoading();
-					}, 1000);
-				})
-				.then(() => {
-					setTimeout(() => {
-						editProfile();
-						mypost();
-						showInteracTions();
-						hideContact();
-						updateFollowCount("followingList");
-						updateFollowCount("followerList");
-						updateFollowCount("matchingList");
-					}, 1100);
-				});
-		};
+              if (option) {
+                main_container.removeChild(option);
+                main_container.appendChild(div);
+              } else {
+                main_container.appendChild(div);
+              }
+            });
+            hideLoading();
+          }, 1000);
+        })
+        .then(() => {
+          setTimeout(() => {
+            editProfile();
+            myPost();
+            showInteracTions();
+            hideContact();
+            updateFollowCount('followingList');
+            updateFollowCount('followerList');
+            updateFollowCount('matchingList');
+          }, 1100);
+        });
+    };
 
-		loadContainer();
-	});
-	function editProfile() {
-		const editBtn = document.querySelector(".setup_profile");
-		editProfileSave();
-		const editContainer = document.querySelector(".edit_profile");
-		editBtn.addEventListener("click", () => {
-			editContainer.style.display = "block";
-		});
-		const cancle = document.querySelector(".edit_options");
-		cancle.addEventListener("click", () => {
-			editContainer.style.display = "none";
-		});
-	}
-	function mypost() {
-		const postWrapper = document.querySelector(".post_wrapper");
-		fetch(`http://localhost:3000/userPosts?userID=${id}`)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				console.log(data);
-				data.forEach((item) => {
-					let div = document.createElement("div");
-					div.className = "post_item";
-					div.innerHTML = `
+    loadContainer();
+  });
+  function editProfile() {
+    const editBtn = document.querySelector(
+      '.setup_profile'
+    );
+    editProfileSave();
+    const editContainer =
+      document.querySelector('.edit_profile');
+    editBtn.addEventListener('click', () => {
+      editContainer.style.display = 'block';
+    });
+    const cancle = document.querySelector('.edit_options');
+    cancle.addEventListener('click', () => {
+      editContainer.style.display = 'none';
+    });
+  }
+  function myPost() {
+    const postWrapper =
+      document.querySelector('.post_wrapper');
+    fetch(`http://localhost:3000/userPosts?userID=${id}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        data.forEach((item) => {
+          let div = document.createElement('div');
+          div.id = `${item.id}`;
+          div.className = 'post_item';
+          div.innerHTML = `
                             <div class="post_item_avatar">
                                 <span>
                                     <img src="${sessionStorage.getItem(
-																			"img"
-																		)}" alt="">
+                                      'img'
+                                    )}" alt="">
                                 </span>
                                 </div>
                                 <div class="post_item_main">
                                 <div class="post_item_infor">
                                     <div class="post_item_infor_name">
-                                        <span></span>
+                                        <span>${
+                                          item.username
+                                        }</span>
                                     </div>
                                     <div class="post_time">
-                                        <span></span>
+                                        <span>${
+                                          item.posttime
+                                        }</span>
                                     </div>
+																		<div class ="remove_post"><i class="fa-solid fa-xmark"></i></div>
                                 </div>
                                 <div class="post_item_content">
                                     <div class="post_caption">
@@ -207,101 +219,133 @@ setTimeout(() => {
                                         </span>
                                     </div>
                                     <div class="post_img">
-                                        <img src="${item.postImg}" alt="">
+                                        <img src="${
+                                          item.postImg
+                                        }" alt="">
                                     </div>
                                 </div>
                                 </div>
                             `;
-					postWrapper.appendChild(div);
-				});
-			});
-	}
+          postWrapper.appendChild(div);
+        });
+      })
+      .then(() => {
+        removeProfilePost();
+      });
+  }
 }, 500);
 // check value input and edit
 function editProfileSave() {
-	const saveOption = document.querySelector(".save_option");
-	saveOption.addEventListener("click", () => {
-		let nameReplace = document.querySelector("#form_edit_name").value;
-		let nickNameReplace = document.querySelector("#form_edit_nickname").value;
-		let storyReplace = document.querySelector("#form_edit_story").value;
-		if (nameReplace) {
-			let object = {
-				name: nameReplace,
-			};
-			replace(object);
-		}
-		if (nickNameReplace) {
-			let object = {
-				nickname: nickNameReplace,
-			};
-			replace(object);
-		}
-		if (storyReplace) {
-			let object = {
-				quotes: storyReplace,
-			};
-			replace(object);
-		}
-	});
+  const saveOption = document.querySelector('.save_option');
+  saveOption.addEventListener('click', () => {
+    let nameReplace = document.querySelector(
+      '#form_edit_name'
+    ).value;
+    let nickNameReplace = document.querySelector(
+      '#form_edit_nickname'
+    ).value;
+    let storyReplace = document.querySelector(
+      '#form_edit_story'
+    ).value;
+    if (nameReplace) {
+      let object = {
+        name: nameReplace,
+      };
+      replace(object);
+    }
+    if (nickNameReplace) {
+      let object = {
+        nickname: nickNameReplace,
+      };
+      replace(object);
+    }
+    if (storyReplace) {
+      let object = {
+        quotes: storyReplace,
+      };
+      replace(object);
+    }
+  });
 
-	function replace(data) {
-		fetch(`http://localhost:3000/user/${id}`, {
-			method: "PATCH",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		});
-	}
+  function replace(data) {
+    fetch(`http://localhost:3000/user/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+  }
 }
 // show interactions container
 function showInteracTions() {
-	const contactList = document.querySelectorAll(".profile_follow ");
-	console.log(contactList);
-	contactList.forEach((contact) => {
-		contact.addEventListener("click", () => {
-			document.querySelector(".follow_list").style.display = "flex";
-			if (contact.id == "profile_match") {
-				document.querySelector(".follow_header_key").textContent = "Matched";
-				loadFollowList("matchingList", sessionStorage.getItem("id"));
-			} else if (contact.id == "profile_following") {
-				document.querySelector(".follow_header_key").textContent = "Following";
-				loadFollowList("followingList", sessionStorage.getItem("id"));
-			} else if (contact.id == "profile_follower") {
-				document.querySelector(".follow_header_key").textContent = "Follower";
-				loadFollowList("followerList", sessionStorage.getItem("id"));
-			}
-		});
-	});
+  const contactList = document.querySelectorAll(
+    '.profile_follow '
+  );
+  console.log(contactList);
+  contactList.forEach((contact) => {
+    contact.addEventListener('click', () => {
+      document.querySelector('.follow_list').style.display =
+        'flex';
+      if (contact.id == 'profile_match') {
+        document.querySelector(
+          '.follow_header_key'
+        ).textContent = 'Matched';
+        loadFollowList(
+          'matchingList',
+          sessionStorage.getItem('id')
+        );
+      } else if (contact.id == 'profile_following') {
+        document.querySelector(
+          '.follow_header_key'
+        ).textContent = 'Following';
+        loadFollowList(
+          'followingList',
+          sessionStorage.getItem('id')
+        );
+      } else if (contact.id == 'profile_follower') {
+        document.querySelector(
+          '.follow_header_key'
+        ).textContent = 'Follower';
+        loadFollowList(
+          'followerList',
+          sessionStorage.getItem('id')
+        );
+      }
+    });
+  });
 }
 // close interactions container
 function hideContact() {
-	const closeBtn = document.querySelector("#follow_close");
-	{
-		closeBtn.addEventListener("click", () => {
-			document.querySelector(".follow_list").style.display = "none";
-			const followList = (document.querySelector(
-				".follow_item_container"
-			).innerHTML = " ");
-		});
-	}
+  const closeBtn = document.querySelector('#follow_close');
+  {
+    closeBtn.addEventListener('click', () => {
+      document.querySelector('.follow_list').style.display =
+        'none';
+      const followList = (document.querySelector(
+        '.follow_item_container'
+      ).innerHTML = ' ');
+    });
+  }
 }
 // load each interaction list
 function loadFollowList(option, id) {
-	// update quantity of list, defined in global.js
-	updateFollowCount(option);
-	const followList = document.querySelector(".follow_item_container");
-	updateFollowCount(option);
-	fetch(`http://localhost:3000/${option}?userID=${id}`)
-		.then((res) => {
-			return res.json();
-		})
-		.then((data) => {
-			data.forEach((item) => {
-				let div = document.createElement("div");
-				div.className = "follow_list_item";
-				div.id = `${item.id}`;
-				div.innerHTML = `
+  // update quantity of list, defined in global.js
+  updateFollowCount(option);
+  const followList = document.querySelector(
+    '.follow_item_container'
+  );
+  updateFollowCount(option);
+  fetch(`http://localhost:3000/${option}?userID=${id}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      data.forEach((item) => {
+        let div = document.createElement('div');
+        div.className = 'follow_list_item';
+        div.id = `${item.id}`;
+        div.innerHTML = `
         <div class="follow_list_item_wrapper">
           <div class="follow_list_item_avatar">
             <img src="${item.avatar}" alt="">
@@ -315,28 +359,44 @@ function loadFollowList(option, id) {
           </div>
         </div>
         `;
-				followList.appendChild(div);
-			});
-		})
-		.then(() => {
-			removeFollowItem(option, id);
-		});
+        followList.appendChild(div);
+      });
+    })
+    .then(() => {
+      removeFollowItem(option, id);
+    });
 }
 // remove item from list
 function removeFollowItem(option, id) {
-	const list = document.querySelectorAll(".follow_list_item");
-	console.log(list);
-	list.forEach((item) => {
-		item
-			.querySelector(".follow_list_item_remove")
-			.addEventListener("click", () => {
-				console.log(item.id);
-				fetch(`http://localhost:3000/${option}/${item.id}`, {
-					method: "DELETE",
-				})
-					.then(() => {
-						loadFollowList(option, id);
-					});
-			});
-	});
+  const list = document.querySelectorAll(
+    '.follow_list_item'
+  );
+  console.log(list);
+  list.forEach((item) => {
+    item
+      .querySelector('.follow_list_item_remove')
+      .addEventListener('click', () => {
+        console.log(item.id);
+        fetch(
+          `http://localhost:3000/${option}/${item.id}`,
+          {
+            method: 'DELETE',
+          }
+        ).then(() => {
+          loadFollowList(option, id);
+        });
+      });
+  });
+}
+function removeProfilePost() {
+  let postList = document.querySelectorAll('.post_item');
+  postList.forEach((post) => {
+    post.addEventListener('click', (e) => {
+      let id = post.id;
+      fetch(`http://localhost:3000/userPosts/${id}`, {
+        method: 'DELETE',
+      });
+      post.style.display = 'none';
+    });
+  });
 }

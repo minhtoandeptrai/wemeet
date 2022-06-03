@@ -1,14 +1,14 @@
 /** @format */
 
 setTimeout(() => {
-  const callLoading = document.querySelector("#mess-btn");
-  callLoading.addEventListener("click", () => {
+  const callLoading = document.querySelector('#mess-btn');
+  callLoading.addEventListener('click', () => {
     const loadContainer = () => {
       showLoading();
       setTimeout(() => {
-        const option = document.querySelector(".options");
-        let div = document.createElement("div");
-        div.className = "message options";
+        const option = document.querySelector('.options');
+        let div = document.createElement('div');
+        div.className = 'message options';
         div.innerHTML = `
                 <div class="message_container">
                     <div class="message_header">

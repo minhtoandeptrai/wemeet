@@ -1,14 +1,16 @@
 /** @format */
 
 setTimeout(() => {
-  const callLoading = document.querySelector("#notifications-btn");
-  callLoading.addEventListener("click", () => {
+  const callLoading = document.querySelector(
+    '#notifications-btn'
+  );
+  callLoading.addEventListener('click', () => {
     const loadContainer = () => {
       showLoading();
       setTimeout(() => {
-        const option = document.querySelector(".options");
-        let div = document.createElement("div");
-        div.className = "notifications options";
+        const option = document.querySelector('.options');
+        let div = document.createElement('div');
+        div.className = 'notifications options';
         div.innerHTML = `
                 <div class="notifications_container">
                     <div class="notifications_header">
@@ -45,8 +47,8 @@ setTimeout(() => {
                                 </div>
                                 <div class="notifications_item_content">
                                     <span>There was an attempt to log in to your account @${sessionStorage.getItem(
-																			"name"
-																		)} on 21 thg 5, 2022 that seems suspicious. Review it now.</span>
+                                      'name'
+                                    )} on 21 thg 5, 2022 that seems suspicious. Review it now.</span>
                                 </div>
                             </div>
                             <div class="notifications_item">

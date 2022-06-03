@@ -1,13 +1,14 @@
 /** @format */
 
 setTimeout(() => {
-  const callLoading = document.querySelector("#matching-btn");
-  callLoading.addEventListener("click", () => {
+  const callLoading =
+    document.querySelector('#matching-btn');
+  callLoading.addEventListener('click', () => {
     const loadContainer = () => {
-      const option = document.querySelector(".options");
+      const option = document.querySelector('.options');
       console.log(option);
-      let div = document.createElement("div");
-      div.className = "people options";
+      let div = document.createElement('div');
+      div.className = 'people options';
       div.innerHTML = `
                 <div class="people__container">
                 <div class="people_wrapper"></div>
@@ -23,18 +24,20 @@ setTimeout(() => {
         resolve();
       });
     };
-    loadContainer().then(function() {
-      fetch("http://localhost:3000/people")
+    loadContainer().then(function () {
+      fetch('http://localhost:3000/people')
         .then((res) => {
           showLoading();
           return res.json();
         })
         .then((data) => {
-          const people_wrapper = document.querySelector(".people_wrapper");
-          data.forEach(function(user) {
+          const people_wrapper = document.querySelector(
+            '.people_wrapper'
+          );
+          data.forEach(function (user) {
             setTimeout(() => {
-              let div = document.createElement("div");
-              div.className = "people__item";
+              let div = document.createElement('div');
+              div.className = 'people__item';
               div.innerHTML = `
                                 <div class="slide__picture__container">
                                 <div class="arrow_slide">
@@ -106,28 +109,31 @@ setTimeout(() => {
 }, 500);
 // match people, next people
 function sliderShow() {
-  const container = document.querySelector(".people_wrapper");
+  const container = document.querySelector(
+    '.people_wrapper'
+  );
   let index = 0;
-  const getPeople = new Promise(function(resolve) {
+  const getPeople = new Promise(function (resolve) {
     setTimeout(() => {
-      let list = document.querySelectorAll(".people__item");
+      let list = document.querySelectorAll('.people__item');
       console.log(list);
-      list.forEach(function(item) {
-      });
+      list.forEach(function (item) {});
       resolve(list);
     }, 10);
   });
-  getPeople.then(function(data) {
+  getPeople.then(function (data) {
     nextPeople(data);
   });
   const nextPeople = (data) => {
     const listLength = data.length;
-    data.forEach(function(item) {
-      const next = item.querySelector(".select__options");
-      next.addEventListener("click", function() {
+    data.forEach(function (item) {
+      const next = item.querySelector('.select__options');
+      next.addEventListener('click', function () {
         ++index;
         if (index < listLength) {
-          container.style.transform = `translateX(${-100 * index}%)`;
+          container.style.transform = `translateX(${
+            -100 * index
+          }%)`;
         } else {
           index = listLength;
         }
@@ -137,25 +143,29 @@ function sliderShow() {
 }
 // sliderShow image
 function moveSlide() {
-  let list = document.querySelectorAll(".people__item");
-  list.forEach(function(item) {
-    let next = item.querySelector(".arrow_next");
-    let back = item.querySelector(".arrow_back");
-    let leng = item.querySelectorAll("img").length;
-    const mainSlide = item.querySelector(".main__slide");
+  let list = document.querySelectorAll('.people__item');
+  list.forEach(function (item) {
+    let next = item.querySelector('.arrow_next');
+    let back = item.querySelector('.arrow_back');
+    let leng = item.querySelectorAll('img').length;
+    const mainSlide = item.querySelector('.main__slide');
     let index = 0;
-    next.addEventListener("click", function(e) {
+    next.addEventListener('click', function (e) {
       ++index;
       if (index < leng) {
-        mainSlide.style.transform = `translateX(${-100 * index}%)`;
+        mainSlide.style.transform = `translateX(${
+          -100 * index
+        }%)`;
       } else {
         index = leng - 1;
       }
     });
-    back.addEventListener("click", function(e) {
+    back.addEventListener('click', function (e) {
       --index;
       if (index >= 0) {
-        mainSlide.style.transform = `translateX(${-100 * index}%)`;
+        mainSlide.style.transform = `translateX(${
+          -100 * index
+        }%)`;
       } else {
         index = 0;
       }
@@ -164,31 +174,34 @@ function moveSlide() {
 }
 // event matching
 function addFollow() {
-  const list = document.querySelectorAll(".people__item");
+  const list = document.querySelectorAll('.people__item');
   list.forEach((item) => {
-    item.querySelector(".select__options__match")
-      .addEventListener("click", (e) => {
-        let name = item.querySelector('.people__name').textContent
-        offname = name.substring(0,name.indexOf(','))
-        let img = item.querySelector('img').src
+    item
+      .querySelector('.select__options__match')
+      .addEventListener('click', (e) => {
+        let name =
+          item.querySelector('.people__name').textContent;
+        offname = name.substring(0, name.indexOf(','));
+        let img = item.querySelector('img').src;
         let obj = {
-          "userID": sessionStorage.getItem('id'),
-          "name": `${offname}`,
-          "nickname": `${item.querySelector('.key__name').textContent}`,
-          "avatar": `${img}`
-          }
-          addToFollow(obj)
+          userID: sessionStorage.getItem('id'),
+          name: `${offname}`,
+          nickname: `${
+            item.querySelector('.key__name').textContent
+          }`,
+          avatar: `${img}`,
+        };
+        addToFollow(obj);
       });
   });
 }
 // add information to DB
-function addToFollow(obj)
-{
+function addToFollow(obj) {
   fetch('http://localhost:3000/matchingList', {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(obj)
-  }) 
+    body: JSON.stringify(obj),
+  });
 }

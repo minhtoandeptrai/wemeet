@@ -1,19 +1,20 @@
 /** @format */
 
-const sideBarContainer = document.querySelector(".side__bar");
-let id = sessionStorage.getItem("id");
+const sideBarContainer =
+  document.querySelector('.side__bar');
+let id = sessionStorage.getItem('id');
 fetch(`http://localhost:3000/user?id=${id}`)
-	.then((res) => {
-		return res.json();
-	})
-	.then((datas) => {
-		datas.forEach((data) => {
-			sessionStorage.setItem("img", data.avatar);
-			sessionStorage.setItem("name", data.name);
-			sessionStorage.setItem("followQty", data.following);
-			let div = document.createElement("div");
-			div.className = "side__bar__container";
-			div.innerHTML = `
+  .then((res) => {
+    return res.json();
+  })
+  .then((datas) => {
+    datas.forEach((data) => {
+      sessionStorage.setItem('img', data.avatar);
+      sessionStorage.setItem('name', data.name);
+      sessionStorage.setItem('followQty', data.following);
+      let div = document.createElement('div');
+      div.className = 'side__bar__container';
+      div.innerHTML = `
             <div class="mode">
                 <ul>
                     <li id="home-btn" class ="sidebar-btn">
@@ -68,43 +69,44 @@ fetch(`http://localhost:3000/user?id=${id}`)
                 </div>
             </div>
                     `;
-			sideBarContainer.appendChild(div);
-		});
-	})
-	.then(() => {
-		logOut();
-		activeSidebarBtn();
-		showSettingContainer();
-	});
+      sideBarContainer.appendChild(div);
+    });
+  })
+  .then(() => {
+    logOut();
+    activeSidebarBtn();
+    showSettingContainer();
+  });
 // toggle btn
 function activeSidebarBtn() {
-	const sideBarBtn = document.querySelectorAll(".sidebar-btn");
-	sideBarBtn.forEach((btn) => {
-		btn.addEventListener("click", () => {
-			const activedBtn = document.querySelector(".active");
-			if (activedBtn) {
-				activedBtn.classList.remove("active");
-			}
-			btn.classList.add("active");
-		});
-	});
+  const sideBarBtn =
+    document.querySelectorAll('.sidebar-btn');
+  sideBarBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const activedBtn = document.querySelector('.active');
+      if (activedBtn) {
+        activedBtn.classList.remove('active');
+      }
+      btn.classList.add('active');
+    });
+  });
 }
 // show setting container
 function showSettingContainer() {
-	const showBtn = document.querySelector("#load_more");
-	const logOut = document.querySelector(".setting");
-	showBtn.addEventListener("click", (e) => {
-		e.stopPropagation();
-		logOut.style.display = "flex";
-	});
-	document.addEventListener("click", () => {
-		logOut.style.display = "none";
-	});
+  const showBtn = document.querySelector('#load_more');
+  const logOut = document.querySelector('.setting');
+  showBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    logOut.style.display = 'flex';
+  });
+  document.addEventListener('click', () => {
+    logOut.style.display = 'none';
+  });
 }
 //  logOut
 function logOut() {
-	const logOutBtn = document.querySelector("#log-out");
-	logOutBtn.addEventListener("click", () => {
-		window.location = "../../index.html";
-	});
+  const logOutBtn = document.querySelector('#log-out');
+  logOutBtn.addEventListener('click', () => {
+    window.location = '../../index.html';
+  });
 }

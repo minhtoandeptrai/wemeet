@@ -41,16 +41,7 @@
       "quotes": "When I kill an Arab, a Jew, a Muslim, a Hindu, a communist, whatever it is, I am killing myself. I wonder if you realise this, basically"
     }
   ],
-  "userPosts": [
-    {
-      "userID": "4",
-      "postContent": "",
-      "postCmt": 0,
-      "postLike": 0,
-      "postImg": "https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/11/9/photo1636418548532-16364185487161813582285.jpg",
-      "id": 5
-    }
-  ],
+  "userPosts": [],
   "people": [
     {
       "id": "1",
@@ -331,22 +322,8 @@
       "id": 1,
       "postID": 1,
       "author": "Johny Dang",
-      "content": "you are so nice !!!",
+      "content": "You are so nice !!!",
       "avatar": "https://cafebiz.cafebizcdn.vn/thumb_w/600/162123310254002176/2021/11/9/photo1636418548532-16364185487161813582285.jpg"
-    },
-    {
-      "postID": "1",
-      "author": "Aldo Delare",
-      "content": "hello",
-      "avatar": "../img/userlist/aldo.avif",
-      "id": 2
-    },
-    {
-      "postID": "1",
-      "author": "Aldo Delare",
-      "content": "Hello",
-      "avatar": "../img/userlist/aldo.avif",
-      "id": 3
     },
     {
       "postID": "2",

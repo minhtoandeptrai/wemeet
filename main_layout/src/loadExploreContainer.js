@@ -1,12 +1,12 @@
 /** @format */
 
 setTimeout(() => {
-  const explore = document.querySelector("#explore-btn");
-  explore.addEventListener("click", (e) => {
-    const option = document.querySelector(".options");
+  const explore = document.querySelector('#explore-btn');
+  explore.addEventListener('click', (e) => {
+    const option = document.querySelector('.options');
     const loadContainer = () => {
-      let div = document.createElement("div");
-      div.className = "blog options";
+      let div = document.createElement('div');
+      div.className = 'blog options';
       div.innerHTML = `
                 <div class="blog__container">
                 <div class="blog_wrapper">
@@ -24,17 +24,18 @@ setTimeout(() => {
       });
     };
     loadContainer().then(() => {
-      fetch("http://localhost:3000/posts")
+      fetch('http://localhost:3000/posts')
         .then((res) => {
           showLoading();
           return res.json();
         })
         .then((data) => {
-          const blogWrapper = document.querySelector(".blog_wrapper");
+          const blogWrapper =
+            document.querySelector('.blog_wrapper');
           data.forEach((post) => {
             setTimeout(() => {
-              let div = document.createElement("div");
-              div.className = "blog_item";
+              let div = document.createElement('div');
+              div.className = 'blog_item';
               div.id = `${post.id}`;
               div.innerHTML = `
                     <div class="blog_item_avatar">
@@ -47,8 +48,8 @@ setTimeout(() => {
                         <div class="blog_item_infor_name">
                             <span>${post.name}</span>
                             <span class ="age"><i class="fa-solid fa-venus"></i>${
-															post.age
-														}</span>
+                              post.age
+                            }</span>
                         </div>
                         <div class="blog_time">
                             <span>${post.time}</span>
@@ -57,8 +58,8 @@ setTimeout(() => {
                     <div class="blog_item_content">
                         <div class="blog_caption">
                             <span style="font-family:none">${
-															post.description
-														}</span>
+                              post.description
+                            }</span>
                         </div>
                         <div class="blog_img">
                             <img src="${post.img}" alt="">
@@ -76,8 +77,8 @@ setTimeout(() => {
                         <div class="comment_to_blog_wrapper">
                             <div class="your_avatar">
                                 <img src="${sessionStorage.getItem(
-																	"img"
-																)}" alt="">
+                                  'img'
+                                )}" alt="">
                             </div>
                             <div class="text_to">
                                 <input type="text" placeholder="Type to comment...">
@@ -99,69 +100,84 @@ setTimeout(() => {
         //load comment
         .then(() => {
           setTimeout(() => {
-            const blogItem = document.querySelectorAll(".blog_item");
+            const blogItem =
+              document.querySelectorAll('.blog_item');
             blogItem.forEach((item) => {
               const id = item.id;
               addPostLike(item);
-              const list = item.querySelector(".comment_list");
+              const list =
+                item.querySelector('.comment_list');
               render(list, id);
               openCommentBlock();
               getValueInputComment();
               // react to post
               function addPostLike(item) {
                 const likeBtn = item
-                  .querySelector(".blog_contact_status")
-                  .querySelector(".fa-heart");
-                likeBtn.addEventListener("click", () => {
-                  likeBtn.classList.toggle("fa-solid");
+                  .querySelector('.blog_contact_status')
+                  .querySelector('.fa-heart');
+                likeBtn.addEventListener('click', () => {
+                  likeBtn.classList.toggle('fa-solid');
                 });
               }
             });
             // open comment write UI
             function openCommentBlock() {
               blogItem.forEach((item) => {
-                let btn = item.querySelector(".blog_contact_comment");
-                btn.addEventListener("click", () => {
-                  item.querySelector(".comment_to_blog").style.display =
-                    "block";
+                let btn = item.querySelector(
+                  '.blog_contact_comment'
+                );
+                btn.addEventListener('click', () => {
+                  item.querySelector(
+                    '.comment_to_blog'
+                  ).style.display = 'block';
                 });
               });
             }
             //get value from input
             function getValueInputComment() {
-              blogItem.forEach(function(cmt) {
-                const sending = cmt.querySelector(".fa-paper-plane");
-                sending.addEventListener("click", function(e) {
-                  let values = cmt.querySelector("input").value;
-                  cmt.querySelector("input").value = "";
-                  if (values) {
-                    let data = {
-                      postID: cmt.id,
-                      author: sessionStorage.getItem("name"),
-                      content: values,
-                      avatar: sessionStorage.getItem("img"),
-                    };
-                    postCmtToAPI(data, cmt);
+              blogItem.forEach(function (cmt) {
+                const sending = cmt.querySelector(
+                  '.fa-paper-plane'
+                );
+                sending.addEventListener(
+                  'click',
+                  function (e) {
+                    let values =
+                      cmt.querySelector('input').value;
+                    cmt.querySelector('input').value = '';
+                    if (values) {
+                      let data = {
+                        postID: cmt.id,
+                        author:
+                          sessionStorage.getItem('name'),
+                        content: values,
+                        avatar:
+                          sessionStorage.getItem('img'),
+                      };
+                      postCmtToAPI(data, cmt);
+                    }
                   }
-                });
+                );
               });
               // post comment to DB
               function postCmtToAPI(data, cmt) {
                 fetch(`http://localhost:3000/commentList`, {
-                    method: "POST",
-                    headers: {
-                      "content-type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                  })
+                  method: 'POST',
+                  headers: {
+                    'content-type': 'application/json',
+                  },
+                  body: JSON.stringify(data),
+                })
                   .then((res) => {
                     return res.json();
                   })
                   .then((item) => {
-                    let list = cmt.querySelector(".comment_list");
+                    let list =
+                      cmt.querySelector('.comment_list');
                     function updateComment(item, list) {
-                      const div = document.createElement("div");
-                      div.className = "comment_item";
+                      const div =
+                        document.createElement('div');
+                      div.className = 'comment_item';
                       div.innerHTML = `
                                         <div class="avatar">
                                         <img src="${item.avatar}" alt="">
@@ -184,6 +200,7 @@ setTimeout(() => {
                                     </div>
                                     `;
                       list.appendChild(div);
+                      updateList(div);
                     }
                     updateComment(item, list);
                   });
@@ -191,14 +208,17 @@ setTimeout(() => {
             }
             // render comment at first
             function render(list, id) {
-              fetch(`http://localhost:3000/commentList?postID=${id}`)
+              fetch(
+                `http://localhost:3000/commentList?postID=${id}`
+              )
                 .then((res) => {
                   return res.json();
                 })
                 .then((data) => {
                   data.forEach((item) => {
-                    const div = document.createElement("div");
-                    div.className = "comment_item";
+                    const div =
+                      document.createElement('div');
+                    div.className = 'comment_item';
                     div.innerHTML = `
                     <div class="avatar">
                     <img src="${item.avatar}" alt="">
@@ -225,25 +245,21 @@ setTimeout(() => {
                   });
                 });
             }
-
-          
           }, 1000);
         });
     });
     const showLoading = () => {
-      loading.style.display = "flex";
+      loading.style.display = 'flex';
     };
     const hideLoading = () => {
-      loading.style.display = "none";
+      loading.style.display = 'none';
     };
   });
 }, 600);
 // react to comment
 function updateList(div) {
-  let commentHeart = div.querySelector(".fa-heart");
-  commentHeart.addEventListener("click", function(e) {
-    this.classList.toggle("fa-solid");
+  let commentHeart = div.querySelector('.fa-heart');
+  commentHeart.addEventListener('click', function (e) {
+    this.classList.toggle('fa-solid');
   });
 }
-
-

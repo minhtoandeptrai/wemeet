@@ -1,17 +1,19 @@
 /** @format */
 
-const whotofollow_wrapper = document.querySelector(".whotofollow_wrapper");
-const whotofollow = document.querySelector(".whotofollow");
+const whotofollow_wrapper = document.querySelector(
+  '.whotofollow_wrapper'
+);
+const whotofollow = document.querySelector('.whotofollow');
 // started to load information
 const loadFamousPeople = () => {
-  fetch("http://localhost:3000/well_know")
+  fetch('http://localhost:3000/well_know')
     .then((res) => {
       return res.json();
     })
     .then((data) => {
       data.forEach((people) => {
-        let div = document.createElement("div");
-        div.className = "whotofollow_item";
+        let div = document.createElement('div');
+        div.className = 'whotofollow_item';
         div.innerHTML = `
                     <div class="follow_container">
                         <div class="follow_ava">
@@ -42,44 +44,53 @@ const loadFamousPeople = () => {
 loadFamousPeople();
 // get event follow
 function followAction() {
-  const followItems = document.querySelectorAll(".whotofollow_item");
+  const followItems = document.querySelectorAll(
+    '.whotofollow_item'
+  );
   followItems.forEach((item) => {
-    const btn = item.querySelector(".follow");
-    btn.addEventListener("click", () => {
+    const btn = item.querySelector('.follow');
+    btn.addEventListener('click', () => {
       whotofollow_wrapper.removeChild(item);
-      let id = sessionStorage.getItem("id");
+      let id = sessionStorage.getItem('id');
       let obj = {
-        "userID": id,
-        "name": `${item.querySelector('.follow_name').querySelector('span').textContent}`,
-        "nickName": `${item.querySelector('.follow_key').querySelector('span').textContent}`,
-        "avatar": `${item.querySelector('img').src}`
-      }
-      addToFollowList(obj)  
+        userID: id,
+        name: `${
+          item
+            .querySelector('.follow_name')
+            .querySelector('span').textContent
+        }`,
+        nickName: `${
+          item
+            .querySelector('.follow_key')
+            .querySelector('span').textContent
+        }`,
+        avatar: `${item.querySelector('img').src}`,
+      };
+      addToFollowList(obj);
     });
   });
 }
 // add information who user follow to DB
-function addToFollowList(obj)
-{
+function addToFollowList(obj) {
   fetch('http://localhost:3000/followingList', {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(obj)
-  })
-    .then(() => {
-      showAlertFollow()
-      updateFollowCount('followingList')
-  })
+    body: JSON.stringify(obj),
+  }).then(() => {
+    showAlertFollow();
+    updateFollowCount('followingList');
+  });
 }
 // alert follow success message
 function showAlertFollow() {
-  const alert = document.querySelector(".alert_follow");
-  alert.style.display = "block";
-  alert.querySelector(".alert_follow_container").style.transform =
-    "translateY(0)";
+  const alert = document.querySelector('.alert_follow');
+  alert.style.display = 'block';
+  alert.querySelector(
+    '.alert_follow_container'
+  ).style.transform = 'translateY(0)';
   setTimeout(() => {
-    alert.style.display = "none";
+    alert.style.display = 'none';
   }, 500);
 }
