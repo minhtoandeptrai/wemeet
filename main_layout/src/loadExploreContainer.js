@@ -96,19 +96,29 @@ setTimeout(() => {
             }, 1000);
           });
         })
+        //load comment
         .then(() => {
           setTimeout(() => {
             const blogItem = document.querySelectorAll(".blog_item");
             blogItem.forEach((item) => {
               const id = item.id;
-              addPostLike(item, id);
+              addPostLike(item);
               const list = item.querySelector(".comment_list");
               render(list, id);
-              openCreateComment();
-              createComment();
+              openCommentBlock();
+              getValueInputComment();
+              // react to post
+              function addPostLike(item) {
+                const likeBtn = item
+                  .querySelector(".blog_contact_status")
+                  .querySelector(".fa-heart");
+                likeBtn.addEventListener("click", () => {
+                  likeBtn.classList.toggle("fa-solid");
+                });
+              }
             });
-
-            function openCreateComment() {
+            // open comment write UI
+            function openCommentBlock() {
               blogItem.forEach((item) => {
                 let btn = item.querySelector(".blog_contact_comment");
                 btn.addEventListener("click", () => {
@@ -117,8 +127,8 @@ setTimeout(() => {
                 });
               });
             }
-
-            function createComment() {
+            //get value from input
+            function getValueInputComment() {
               blogItem.forEach(function(cmt) {
                 const sending = cmt.querySelector(".fa-paper-plane");
                 sending.addEventListener("click", function(e) {
@@ -131,12 +141,12 @@ setTimeout(() => {
                       content: values,
                       avatar: sessionStorage.getItem("img"),
                     };
-                    postCmtAPI(data, cmt);
+                    postCmtToAPI(data, cmt);
                   }
                 });
               });
-
-              function postCmtAPI(data, cmt) {
+              // post comment to DB
+              function postCmtToAPI(data, cmt) {
                 fetch(`http://localhost:3000/commentList`, {
                     method: "POST",
                     headers: {
@@ -149,11 +159,37 @@ setTimeout(() => {
                   })
                   .then((item) => {
                     let list = cmt.querySelector(".comment_list");
+                    function updateComment(item, list) {
+                      const div = document.createElement("div");
+                      div.className = "comment_item";
+                      div.innerHTML = `
+                                        <div class="avatar">
+                                        <img src="${item.avatar}" alt="">
+                                    </div>
+                                    <div class="comment_content">
+                                        <div class="comment_user">
+                                            <div class="main_comment">
+                                                <span>${item.author}</span>
+                                                <span class="main_content">${item.content}</span>
+                                            </div>
+                                            <ul class="comment_status">
+                                                <li>Just</li>
+                                                <li>Likes</li>
+                                                <li>Reply</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="comment_heart">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+                                    `;
+                      list.appendChild(div);
+                    }
                     updateComment(item, list);
                   });
               }
             }
-
+            // render comment at first
             function render(list, id) {
               fetch(`http://localhost:3000/commentList?postID=${id}`)
                 .then((res) => {
@@ -190,12 +226,7 @@ setTimeout(() => {
                 });
             }
 
-            function updateList(div) {
-              let commentHeart = div.querySelector(".fa-heart");
-              commentHeart.addEventListener("click", function(e) {
-                this.classList.toggle("fa-solid");
-              });
-            }
+          
           }, 1000);
         });
     });
@@ -207,39 +238,12 @@ setTimeout(() => {
     };
   });
 }, 600);
-
-function updateComment(item, list) {
-  const div = document.createElement("div");
-  div.className = "comment_item";
-  div.innerHTML = `
-                    <div class="avatar">
-                    <img src="${item.avatar}" alt="">
-                </div>
-                <div class="comment_content">
-                    <div class="comment_user">
-                        <div class="main_comment">
-                            <span>${item.author}</span>
-                            <span class="main_content">${item.content}</span>
-                        </div>
-                        <ul class="comment_status">
-                            <li>Just</li>
-                            <li>Likes</li>
-                            <li>Reply</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="comment_heart">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                `;
-  list.appendChild(div);
-}
-
-function addPostLike(item, id) {
-  const likeBtn = item
-    .querySelector(".blog_contact_status")
-    .querySelector(".fa-heart");
-  likeBtn.addEventListener("click", () => {
-    likeBtn.classList.toggle("fa-solid");
+// react to comment
+function updateList(div) {
+  let commentHeart = div.querySelector(".fa-heart");
+  commentHeart.addEventListener("click", function(e) {
+    this.classList.toggle("fa-solid");
   });
 }
+
+

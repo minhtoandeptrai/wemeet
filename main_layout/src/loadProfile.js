@@ -74,9 +74,9 @@ fetch(`http://localhost:3000/user?id=${id}`)
 	.then(() => {
 		logOut();
 		activeSidebarBtn();
-		showLogOut();
+		showSettingContainer();
 	});
-
+// toggle btn
 function activeSidebarBtn() {
 	const sideBarBtn = document.querySelectorAll(".sidebar-btn");
 	sideBarBtn.forEach((btn) => {
@@ -89,12 +89,10 @@ function activeSidebarBtn() {
 		});
 	});
 }
-
-function showLogOut() {
+// show setting container
+function showSettingContainer() {
 	const showBtn = document.querySelector("#load_more");
 	const logOut = document.querySelector(".setting");
-	console.log(logOut);
-	console.log(showBtn);
 	showBtn.addEventListener("click", (e) => {
 		e.stopPropagation();
 		logOut.style.display = "flex";
@@ -103,7 +101,7 @@ function showLogOut() {
 		logOut.style.display = "none";
 	});
 }
-
+//  logOut
 function logOut() {
 	const logOutBtn = document.querySelector("#log-out");
 	logOutBtn.addEventListener("click", () => {

@@ -104,7 +104,7 @@ setTimeout(() => {
     });
   });
 }, 500);
-
+// match people, next people
 function sliderShow() {
   const container = document.querySelector(".people_wrapper");
   let index = 0;
@@ -113,7 +113,6 @@ function sliderShow() {
       let list = document.querySelectorAll(".people__item");
       console.log(list);
       list.forEach(function(item) {
-        console.log(item);
       });
       resolve(list);
     }, 10);
@@ -136,7 +135,7 @@ function sliderShow() {
     });
   };
 }
-
+// sliderShow image
 function moveSlide() {
   let list = document.querySelectorAll(".people__item");
   list.forEach(function(item) {
@@ -163,7 +162,7 @@ function moveSlide() {
     });
   });
 }
-
+// event matching
 function addFollow() {
   const list = document.querySelectorAll(".people__item");
   list.forEach((item) => {
@@ -182,6 +181,7 @@ function addFollow() {
       });
   });
 }
+// add information to DB
 function addToFollow(obj)
 {
   fetch('http://localhost:3000/matchingList', {

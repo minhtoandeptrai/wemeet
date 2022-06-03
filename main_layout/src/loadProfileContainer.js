@@ -149,31 +149,29 @@ setTimeout(() => {
 					setTimeout(() => {
 						editProfile();
 						mypost();
-						showContact();
-            hideContact();
-            updateFollowCount('followingList')
-            updateFollowCount('followerList')
-            updateFollowCount('matchingList')
+						showInteracTions();
+						hideContact();
+						updateFollowCount("followingList");
+						updateFollowCount("followerList");
+						updateFollowCount("matchingList");
 					}, 1100);
 				});
-
-			function editProfile() {
-				const editBtn = document.querySelector(".setup_profile");
-				editProfileSave();
-				const editContainer = document.querySelector(".edit_profile");
-				editBtn.addEventListener("click", () => {
-					editContainer.style.display = "block";
-				});
-				const cancle = document.querySelector(".edit_options");
-				cancle.addEventListener("click", () => {
-					editContainer.style.display = "none";
-				});
-			}
 		};
 
 		loadContainer();
 	});
-
+	function editProfile() {
+		const editBtn = document.querySelector(".setup_profile");
+		editProfileSave();
+		const editContainer = document.querySelector(".edit_profile");
+		editBtn.addEventListener("click", () => {
+			editContainer.style.display = "block";
+		});
+		const cancle = document.querySelector(".edit_options");
+		cancle.addEventListener("click", () => {
+			editContainer.style.display = "none";
+		});
+	}
 	function mypost() {
 		const postWrapper = document.querySelector(".post_wrapper");
 		fetch(`http://localhost:3000/userPosts?userID=${id}`)
@@ -219,7 +217,7 @@ setTimeout(() => {
 			});
 	}
 }, 500);
-
+// check value input and edit
 function editProfileSave() {
 	const saveOption = document.querySelector(".save_option");
 	saveOption.addEventListener("click", () => {
@@ -256,7 +254,8 @@ function editProfileSave() {
 		});
 	}
 }
-function showContact() {
+// show interactions container
+function showInteracTions() {
 	const contactList = document.querySelectorAll(".profile_follow ");
 	console.log(contactList);
 	contactList.forEach((contact) => {
@@ -265,19 +264,17 @@ function showContact() {
 			if (contact.id == "profile_match") {
 				document.querySelector(".follow_header_key").textContent = "Matched";
 				loadFollowList("matchingList", sessionStorage.getItem("id"));
-				// removeFollowItem("matchingList", sessionStorage.getItem("id"))
 			} else if (contact.id == "profile_following") {
 				document.querySelector(".follow_header_key").textContent = "Following";
 				loadFollowList("followingList", sessionStorage.getItem("id"));
-				// removeFollowItem("followingList", sessionStorage.getItem("id"))
 			} else if (contact.id == "profile_follower") {
 				document.querySelector(".follow_header_key").textContent = "Follower";
 				loadFollowList("followerList", sessionStorage.getItem("id"));
-				// removeFollowItem("followerList", sessionStorage.getItem("id"))
 			}
 		});
 	});
 }
+// close interactions container
 function hideContact() {
 	const closeBtn = document.querySelector("#follow_close");
 	{
@@ -289,10 +286,12 @@ function hideContact() {
 		});
 	}
 }
+// load each interaction list
 function loadFollowList(option, id) {
-  updateFollowCount(option)
-  const followList = document.querySelector(".follow_item_container");
-  updateFollowCount(option)
+	// update quantity of list, defined in global.js
+	updateFollowCount(option);
+	const followList = document.querySelector(".follow_item_container");
+	updateFollowCount(option);
 	fetch(`http://localhost:3000/${option}?userID=${id}`)
 		.then((res) => {
 			return res.json();
@@ -323,6 +322,7 @@ function loadFollowList(option, id) {
 			removeFollowItem(option, id);
 		});
 }
+// remove item from list
 function removeFollowItem(option, id) {
 	const list = document.querySelectorAll(".follow_list_item");
 	console.log(list);
@@ -334,11 +334,6 @@ function removeFollowItem(option, id) {
 				fetch(`http://localhost:3000/${option}/${item.id}`, {
 					method: "DELETE",
 				})
-					.then(() => {
-						const followList = (document.querySelector(
-							".follow_item_container"
-						).innerHTML = " ");
-					})
 					.then(() => {
 						loadFollowList(option, id);
 					});

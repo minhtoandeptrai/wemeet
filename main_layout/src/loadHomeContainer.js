@@ -70,36 +70,37 @@ setTimeout(() => {
     };
     loadContainer();
     setTimeout(() => {
-      function load() {
-        const action_post = document.querySelector(".action_post");
-        action_post.addEventListener("click", () => {
-          let content = document.querySelector(".homeinput").value;
-          if (content) {
-            let object = {
-              userID: sessionStorage.getItem("id"),
-              postContent: `${content}`,
-              postImg: "https://images.unsplash.com/photo-1653844429734-baff290b6573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-            };
-            creathomePost(object);
-          }
-        });
-
-        function creathomePost(data) {
-          fetch("http://localhost:3000/userPosts", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
-          showAlert();
-        }
-      }
-      load();
+      actionPost();
     }, 1200);
   });
 }, 500);
-
+// post action, get value from input
+function actionPost() {
+  const action_post = document.querySelector(".action_post");
+  action_post.addEventListener("click", () => {
+    let content = document.querySelector(".homeinput").value;
+    if (content) {
+      let object = {
+        userID: sessionStorage.getItem("id"),
+        postContent: `${content}`,
+        postImg: "https://images.unsplash.com/photo-1653844429734-baff290b6573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      };
+      creathomePost(object);
+    }
+  });
+  // add post to DB 
+  function creathomePost(data) {
+    fetch("http://localhost:3000/userPosts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    showAlert();
+  }
+}
+  // show alert success message
 function showAlert() {
   const alert = document.querySelector(".home_alert");
   alert.style.display = "block";

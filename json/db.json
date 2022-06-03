@@ -5,7 +5,7 @@
       "name": "JD Chow",
       "nickname": "@jdvow",
       "from": "USA",
-      "following": 31,
+      "following": 32,
       "follower": 10,
       "avatar": "../img/userlist/chow.avif",
       "quotes": "Emptiness comes as a sunset comes of an evening, full of beauty, enchantment, and richness; it comes as naturally as the blossoming of a flower."
@@ -340,94 +340,67 @@
       "content": "hello",
       "avatar": "../img/userlist/aldo.avif",
       "id": 2
+    },
+    {
+      "postID": "1",
+      "author": "Aldo Delare",
+      "content": "Hello",
+      "avatar": "../img/userlist/aldo.avif",
+      "id": 3
+    },
+    {
+      "postID": "2",
+      "author": "Aldo Delare",
+      "content": "Hello",
+      "avatar": "../img/userlist/aldo.avif",
+      "id": 4
     }
   ],
   "followingList": [
     {
-      "userID": "3",
-      "name": "Elon Musk",
-      "nickName": "@theeelonmusk",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
-      "id": 4
-    },
-    {
-      "userID": "3",
-      "name": "Bill Gates",
-      "nickName": "@theeebill",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/billgate.jpg",
-      "id": 5
-    },
-    {
-      "userID": "3",
-      "name": "Emma waston",
-      "nickName": "@wasemton",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/emma.jpg",
-      "id": 6
-    },
-    {
-      "userID": "3",
-      "name": "Elon Musk",
-      "nickName": "@theeelonmusk",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
-      "id": 7
-    },
-    {
-      "userID": "3",
-      "name": "Justin Bieber",
-      "nickName": "@bieber1101",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
-      "id": 8
-    },
-    {
-      "userID": "2",
-      "name": "Justin Bieber",
-      "nickName": "@bieber1101",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
-      "id": 10
-    },
-    {
-      "userID": "2",
-      "name": "Bill Gates",
-      "nickName": "@theeebill",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/billgate.jpg",
-      "id": 11
-    },
-    {
-      "userID": "1",
-      "name": "Elon Musk",
-      "nickName": "@theeelonmusk",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
-      "id": 12
-    },
-    {
-      "userID": "1",
-      "name": "Justin Bieber",
-      "nickName": "@bieber1101",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/justin.jpg",
-      "id": 13
-    },
-    {
       "userID": "1",
       "name": "Emma waston",
       "nickName": "@wasemton",
       "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/emma.jpg",
-      "id": 14
+      "id": 1
     },
     {
       "userID": "1",
-      "name": "Bill Gates",
-      "nickName": "@theeebill",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/billgate.jpg",
-      "id": 15
-    },
-    {
-      "userID": "1",
-      "name": "Ed Sheeran",
-      "nickName": "@theeead",
-      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/edsheeran.jpg",
-      "id": 16
+      "name": "Donald Trump",
+      "nickName": "@trumpisthebest",
+      "avatar": "http://localhost:8080/dating/frontend/main_layout/img/follow/musk.jpg",
+      "id": 2
     }
   ],
-  "followerList": [],
+  "followerList": [
+    {
+      "userID": 1,
+      "name": "Yuliana",
+      "nickname": "@lala123",
+      "avatar": "https://images.unsplash.com/photo-1644982647531-daff2c7383f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "id": 1
+    },
+    {
+      "userID": 2,
+      "name": "Brian Lawson",
+      "nickname": "@cormac",
+      "avatar": "https://images.unsplash.com/photo-1621784563330-caee0b138a00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "id": 2
+    },
+    {
+      "userID": 3,
+      "name": "Dom Hill",
+      "nickname": "@domjewet",
+      "avatar": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80",
+      "id": 3
+    },
+    {
+      "userID": 4,
+      "name": "Alireza Esmaeeli",
+      "nickname": "@delimy",
+      "avatar": "https://images.unsplash.com/photo-1646992410268-1cd6f140ef0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      "id": 4
+    }
+  ],
   "matchingList": []
 }
